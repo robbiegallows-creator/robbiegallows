@@ -1,45 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Robbie Gallows | Gothic & Expressionist Fine Art</title>
-<meta name="description" content="Official website of Robbie Gallows, contemporary gothic expressionist artist creating paintings and multimedia works.">
-<meta name="robots" content="index,follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Robbie Gallows | Gothic Expressionist Fine Art</title>
+
+<meta name="description" content="Robbie Gallows creates contemporary gothic expressionist paintings and multimedia artwork exploring mortality, memory, spirituality, mythology, and the human condition.">
+
+<meta name="keywords" content="Robbie Gallows, gothic art, expressionist painting, dark art, contemporary artist, multimedia artist, fine art">
+
+<meta name="author" content="Robbie Gallows">
+
+<meta property="og:title" content="Robbie Gallows | Gothic Expressionist Fine Art">
+<meta property="og:description" content="Enter the world of Robbie Gallows, where gothic imagination meets contemporary expressionism.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://robbiegallows.netlify.app/">
+
+<meta name="robots" content="index, follow">
+
 <link rel="canonical" href="https://robbiegallows.netlify.app/">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+
 <style>
-body{margin:0;background:#0b0b0d;color:#eee;font-family:Arial,sans-serif}
-header,footer{padding:24px;text-align:center;background:#141418}
-main{max-width:1100px;margin:auto;padding:24px}
-.hero{text-align:center;padding:80px 20px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{border:1px solid #444;padding:16px}
-img{max-width:100%;height:auto}
-a{color:#c5a059}
-</style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Robbie Gallows","jobTitle":"Artist","url":"https://robbiegallows.netlify.app/"}
-</script>
-</head>
-<body>
-<header><h1>Robbie Gallows</h1><p>Gothic & Expressionist Fine Art</p></header>
-<main>
-<section class="hero">
-<h2>Original Paintings • Multimedia • Digital Masters</h2>
-<p>Exploring mortality, memory, spirituality and the gothic imagination through contemporary art.</p>
-</section>
-<section>
-<h2>Featured Works</h2>
-<div class="gallery">
-<div class="card"><img src="grim-reaper.png" alt="The Silent Levitation"><h3>The Silent Levitation</h3></div>
-<div class="card"><img src="graveyard-piece.jpg" alt="Shadows of Memory"><h3>Shadows of Memory</h3></div>
-</div>
-</section>
-<section>
-<h2>Artist Statement</h2>
-<p>My work exists in the silent spaces between memory, myth and mortality.</p>
-</section>
-</main>
-<footer>© 2026 Robbie Gallows Fine Art</footer>
-</body>
-</html>
+
+:root{
+--black:#080808;
+--dark:#111116;
+--gray:#202027;
+--gold:#c5a059;
+--white:#f1eee8;
+}
+
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+background:
+radial-gradient(circle at top,#1b1b22 0%,#080808 55%);
+color:var(--white);
+font-family:'Plus Jakarta Sans',sans-serif;
+line-height:1.7;
+
+}
+
+
+h1,h2,h3{
+
+font-family:'Cinzel',serif;
+letter-spacing:2px;
+
+}
+
+
+a{
+
+color:var(--gold);
+text-decoration:none;
+
+}
+
+
+header{
+
+position:relative;
+padding:30px 20px;
+background:#0a0a0c;
+border-bottom:1px solid #292929;
+
+}
+
+
+.nav{
+
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+
+}
+
+
+.logo{
+
+font-size:28px;
+color:var(--white);
+
+}
+
+
+.menu a{
+
+margin:10px;
+font-size:14px;
+
+}
+
+
+
+.hero{
+
+min-height:85vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px 20px;
+
+}
+
+
+.hero-content{
+
+max-width:850px;
+
+}
+
+
+.hero h1{
+
+font-size:clamp(42px,7vw,80px);
+margin-bottom:10px;
+
+}
+
+
+.hero p{
+
+font-size:20px;
+color:#cfcfcf;
+
+}
+
+
+.button{
+
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+border:1px solid var(--gold);
+transition:.3s;
+
+}
+
+
+.button:hover{
+
+background:var(--gold);
+color:#000;
+
+}
+
+
+
+section{
+
+max-width:1200px;
+margin:auto;
+padding:70px 25px;
+
+}
+
+
+.section-title{
+
+text-align:center;
+margin-bottom:40px;
+
+}
+
+
+.gallery{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+
+.card{
+
+background:#111;
+border:1px solid #292929;
+padding:20px;
+transition:.4s;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-8px);
+border-color:var(--gold);
+
+}
+
+
+.card img{
+
+width:100%;
+height:350px;
+object-fit:cover;
+
+}
+
+
+.card h3{
+
+color:var(--gold);
+
+}
