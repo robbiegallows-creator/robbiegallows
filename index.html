@@ -280,3 +280,310 @@ font-size:42px;
 margin-bottom:50px;
 
 }
+<style>
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+
+.art-card{
+
+background:var(--panel);
+
+border:1px solid var(--line);
+
+overflow:hidden;
+
+transition:.4s;
+
+}
+
+
+.art-card:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--gold);
+
+}
+
+
+.art-card img{
+
+width:100%;
+
+height:420px;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+
+.art-info{
+
+padding:30px;
+
+}
+
+
+.art-info h3{
+
+margin-top:0;
+
+font-size:25px;
+
+}
+
+
+.art-info p{
+
+color:var(--muted);
+
+}
+
+
+.tag{
+
+display:inline-block;
+
+border:1px solid var(--gold);
+
+padding:6px 14px;
+
+font-size:12px;
+
+letter-spacing:2px;
+
+color:var(--gold);
+
+margin-top:15px;
+
+text-transform:uppercase;
+
+}
+
+
+.video-box{
+
+position:relative;
+
+padding-bottom:56.25%;
+
+height:0;
+
+overflow:hidden;
+
+border:1px solid var(--line);
+
+}
+
+
+.video-box iframe{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+left:0;
+
+top:0;
+
+}
+
+
+.statement{
+
+background:rgba(20,20,25,.7);
+
+border-top:1px solid var(--line);
+
+border-bottom:1px solid var(--line);
+
+}
+
+
+.statement p{
+
+font-size:20px;
+
+color:var(--muted);
+
+}
+
+
+.contact-box{
+
+text-align:center;
+
+background:var(--panel);
+
+padding:60px 30px;
+
+border:1px solid var(--line);
+
+}
+
+
+footer{
+
+text-align:center;
+
+padding:50px 20px;
+
+border-top:1px solid var(--line);
+
+color:var(--muted);
+
+}
+
+
+@media(max-width:700px){
+
+.menu{
+
+display:none;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+.section-title{
+
+font-size:32px;
+
+}
+
+}
+
+</style>
+
+
+<body>
+
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+Robbie Gallows
+</div>
+
+
+<div class="menu">
+
+<a href="#gallery">Gallery</a>
+
+<a href="#multimedia">Multimedia</a>
+
+<a href="#about">Studio</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Robbie Gallows
+</h1>
+
+
+<p>
+Gothic expressionist fine art exploring mortality, mythology, consciousness, memory, and the unseen spaces between worlds.
+</p>
+
+
+<a class="button" href="#gallery">
+Enter The Gallery
+</a>
+
+
+</div>
+
+</section>
+
+
+
+
+<section id="gallery">
+
+<h2 class="section-title">
+Physical Works
+</h2>
+
+
+<div class="gallery">
+
+
+<div class="art-card">
+
+<img src="grim-reaper.png" alt="The Silent Levitation">
+
+<div class="art-info">
+
+<h3>
+The Silent Levitation
+</h3>
+
+<p>
+Expressionist oil painting exploring spectral figures, winter landscapes, and the boundary between life and memory.
+</p>
+
+<span class="tag">
+Original Painting
+</span>
+
+</div>
+
+</div>
+  
+  <div class="art-card">
+
+<img src="graveyard-piece.jpg" alt="Shadows of Memory">
+
+<div class="art-info">
+
+<h3>
+Shadows of Memory
+</h3>
+
+<p>
+A layered mixed-media work inspired by gothic romanticism, Victorian symbolism, and forgotten histories.
+</p>
+
+<span class="tag">
+Mixed Media
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
