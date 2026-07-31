@@ -465,13 +465,27 @@ font-size:17px;
 font-size:32px;
 
 }
+.art-card img{
+transition:.5s;
+}
 
+.art-card:hover img{
+transform:scale(1.05);
+}
+.art-card{
+opacity:0;
+transform:translateY(40px);
+animation:fade .9s ease forwards;
+}
+<a class="button" href="#contact">Acquire Artwork</a>
 }
 
 </style>
 
 </head>
-
+<meta property="og:image" content="https://robbiegallows.netlify.app/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <body>
 
   <header>
@@ -487,6 +501,8 @@ Robbie Gallows
 <a href="#multimedia">Multimedia</a>
 <a href="#about">Studio</a>
 <a href="#contact">Contact</a>
+<a href="silent-levitation.html">
+<link rel="icon" href="favicon.ico">
 </div>
 
 </div>
@@ -506,7 +522,26 @@ Robbie Gallows
 Gothic expressionist fine art exploring mortality, mythology, consciousness, memory, and the unseen spaces between worlds.
 </p>
 
+<meta property="og:url" content="https://robbiegallows.netlify.app/">
 
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Person",
+ "name":"Robbie Gallows",
+ "jobTitle":"Artist",
+ "url":"https://robbiegallows.netlify.app/",
+ "sameAs":[
+   "https://instagram.com/...",
+   "https://youtube.com/..."
+ ]
+}
+</script>
+
+<style>
+
+:root{
+  
 <a class="button" href="#gallery">
 Enter The Gallery
 </a>
@@ -531,7 +566,10 @@ Physical Works
 
 <div class="art-card">
 
-<img src="grim-reaper.png" alt="The Silent Levitation">
+<imgsrc="grim-reaper.png"
+loading="lazy"
+decoding="async"
+alt="The Silent Levitation by Robbie Gallows">
 
 <div class="art-info">
 
@@ -611,7 +649,7 @@ Artist Statement
 <p>
 Robbie Gallows creates contemporary gothic expressionist works exploring mortality, mythology, spirituality, memory, consciousness, and the human condition.
 
-Through traditional painting, multimedia, and cinematic storytelling, each work investigates the space between the visible world and the unknown.
+Through traditional painting, multimedia, and cinematic AI storytelling, each work investigates the space between the visible world and the unknown.
 </p>
 
 </section>
