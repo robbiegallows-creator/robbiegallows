@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Robbie Gallows | Gothic Expressionist Fine Art</title>
+
+<meta name="description" content="Robbie Gallows creates contemporary gothic expressionist fine art exploring mortality, mythology, spirituality, memory, consciousness, and the human condition through painting and multimedia works.">
+
+<meta name="keywords" content="Robbie Gallows, gothic artist, gothic expressionism, dark art, contemporary painting, symbolic art, multimedia artist, fine art, surreal gothic art">
+
+<meta name="author" content="Robbie Gallows">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://robbiegallows.netlify.app/">
+
+
+<!-- Open Graph Social Sharing -->
+
+<meta property="og:title" content="Robbie Gallows | Gothic Expressionist Fine Art">
+
+<meta property="og:description" content="Enter the dark visual world of Robbie Gallows, where gothic symbolism, mythology, and contemporary expressionism collide.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://robbiegallows.netlify.app/">
+
+
+<!-- Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root{
+
+--black:#050505;
+--dark:#0c0c10;
+--panel:#15151b;
+--line:#292929;
+--gold:#c5a059;
+--white:#f0ece3;
+--muted:#b8b5ae;
+
+}
+
+
+*{
+
+box-sizing:border-box;
+scroll-behavior:smooth;
+
+}
+
+
+body{
+
+margin:0;
+
+background:
+radial-gradient(circle at top,#24242d 0%,#080808 45%,#030303 100%);
+
+color:var(--white);
+
+font-family:'Plus Jakarta Sans',sans-serif;
+
+line-height:1.8;
+
+}
+
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+background-image:
+url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+
+opacity:.25;
+
+}
+
+
+h1,h2,h3{
+
+font-family:'Cinzel',serif;
+
+letter-spacing:2px;
+
+}
+
+
+a{
+
+color:var(--gold);
+
+text-decoration:none;
+
+}
+
+
+header{
+
+position:sticky;
+
+top:0;
+
+z-index:10;
+
+background:rgba(5,5,5,.85);
+
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid var(--line);
+
+}
+
+
+.nav{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:25px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+}
+
+
+.logo{
+
+font-family:'Cinzel',serif;
+
+font-size:28px;
+
+color:var(--white);
+
+}
+
+
+.menu a{
+
+margin-left:25px;
+
+font-size:14px;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+}
+
+
+.hero{
+
+min-height:90vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:40px 20px;
+
+}
+
+
+.hero-content{
+
+max-width:900px;
+
+animation:fade 2s ease;
+
+}
+
+
+.hero h1{
+
+font-size:clamp(45px,8vw,90px);
+
+margin:0;
+
+}
+
+
+.hero p{
+
+font-size:21px;
+
+color:var(--muted);
+
+max-width:750px;
+
+margin:30px auto;
+
+}
+
+
+.button{
+
+display:inline-block;
+
+padding:16px 40px;
+
+border:1px solid var(--gold);
+
+letter-spacing:2px;
+
+transition:.4s;
+
+}
+
+
+.button:hover{
+
+background:var(--gold);
+
+color:#000;
+
+}
+
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+section{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:90px 25px;
+
+}
+
+
+.section-title{
+
+text-align:center;
+
+font-size:42px;
+
+margin-bottom:50px;
+
+}
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+
+.art-card{
+
+background:var(--panel);
+
+border:1px solid var(--line);
+
+overflow:hidden;
+
+transition:.4s;
+
+}
+
+
+.art-card:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--gold);
+
+}
+
+
+.art-card img{
+
+width:100%;
+
+height:420px;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+
+.art-info{
+
+padding:30px;
+
+}
+
+
+.art-info h3{
+
+margin-top:0;
+
+font-size:25px;
+
+}
+
+
+.art-info p{
+
+color:var(--muted);
+
+}
+
+
+.tag{
+
+display:inline-block;
+
+border:1px solid var(--gold);
+
+padding:6px 14px;
+
+font-size:12px;
+
+letter-spacing:2px;
+
+color:var(--gold);
+
+margin-top:15px;
+
+text-transform:uppercase;
+
+}
+
+
+.video-box{
+
+position:relative;
+
+padding-bottom:56.25%;
+
+height:0;
+
+overflow:hidden;
+
+border:1px solid var(--line);
+
+}
+
+
+.video-box iframe{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+left:0;
+
+top:0;
+
+}
+
+
+.statement{
+
+background:rgba(20,20,25,.7);
+
+border-top:1px solid var(--line);
+
+border-bottom:1px solid var(--line);
+
+}
+
+
+.statement p{
+
+font-size:20px;
+
+color:var(--muted);
+
+}
+
+
+.contact-box{
+
+text-align:center;
+
+background:var(--panel);
+
+padding:60px 30px;
+
+border:1px solid var(--line);
+
+}
+
+
+footer{
+
+text-align:center;
+
+padding:50px 20px;
+
+border-top:1px solid var(--line);
+
+color:var(--muted);
+
+}
+
+
+@media(max-width:700px){
+
+.menu{
+
+display:none;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+.section-title{
+
+font-size:32px;
+
+}
+.art-card img{
+transition:.5s;
+}
+
+.art-card:hover img{
+transform:scale(1.05);
+}
+.art-card{
+opacity:0;
+transform:translateY(40px);
+animation:fade .9s ease forwards;
+}
+
+}
+
+</style>
+<link rel="icon" href="favicon.ico">
+<meta property="og:image" content="https://robbiegallows.netlify.app/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Person",
+ "name":"Robbie Gallows",
+ "jobTitle":"Artist",
+ "url":"https://robbiegallows.netlify.app/",
+ "sameAs":[
+   "https://instagram.com/...",
+   "https://youtube.com/..."
+</head>
+<body>
+
+  <header>
+
+<div class="nav">
+
+<div class="logo">
+Robbie Gallows
+</div>
+
+<div class="menu">
+<a href="#gallery">Gallery</a>
+<a href="#multimedia">Multimedia</a>
+<a href="#about">Studio</a>
+<a href="#contact">Contact</a>
+<a href="silent-levitation.html">
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Robbie Gallows
+</h1>
+
+
+<p>
+Gothic expressionist fine art exploring mortality, mythology, consciousness, memory, and the unseen spaces between worlds.
+</p>
+
+<meta property="og:url" content="https://robbiegallows.netlify.app/">
+
+}
+</script>
+
+<style>
+
+:root{
+  
+<a class="button" href="#gallery">
+Enter The Gallery
+</a>
+
+
+</div>
+
+</section>
+
+
+
+
+<section id="gallery">
+
+<h2 class="section-title">
+Physical Works
+</h2>
+
+
+<div class="gallery">
+
+
+<div class="art-card">
+
+<imgsrc="grim-reaper.png"
+loading="lazy"
+decoding="async"
+alt="The Silent Levitation by Robbie Gallows">
+
+<div class="art-info">
+
+<h3>
+The Silent Levitation
+</h3>
+
+<p>
+Expressionist oil painting exploring spectral figures, winter landscapes, and the boundary between life and memory.
+</p>
+
+<span class="tag">
+Original Painting
+</span>
+
+</div>
+
+</div>
+  
+  <div class="art-card">
+
+<img src="graveyard-piece.jpg" alt="Shadows of Memory">
+
+<div class="art-info">
+
+<h3>
+Shadows of Memory
+</h3>
+
+<p>
+A layered mixed-media work inspired by gothic romanticism, Victorian symbolism, and forgotten histories.
+</p>
+
+<span class="tag">
+Mixed Media
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+<section id="multimedia">
+
+<h2 class="section-title">
+Multimedia Works
+</h2>
+
+<div class="video-box">
+
+<iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/k5hRo8oxdBM" 
+  title="Robbie Gallows - Where Faith Begins to Fracture" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
+
+</div>
+
+<p style="text-align:center;color:var(--muted);margin-top:30px;">
+Cinematic explorations combining painting, digital media, sound, and visual storytelling.
+</p>
+
+</section>
+<section class="statement" id="about">
+
+<h2 class="section-title">
+Artist Statement
+</h2>
+
+<p>
+Robbie Gallows creates contemporary gothic expressionist works exploring mortality, mythology, spirituality, memory, consciousness, and the human condition.
+
+Through traditional painting, multimedia, and cinematic AI storytelling, each work investigates the space between the visible world and the unknown.
+</p>
+
+</section>
+
+  <section id="contact">
+
+<h2 class="section-title">
+Contact
+</h2>
+
+<div class="contact-box">
+
+<p>
+For exhibitions, commissions, collaborations, or collector inquiries:
+</p>
+
+<p>
+<a href="mailto:robbiegallows@gmail.com">
+robbiegallows@gmail.com
+</a>
+</p>
+
+<p>
+Follow the studio for new works and multimedia releases.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Robbie Gallows. All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
+
+</html>
