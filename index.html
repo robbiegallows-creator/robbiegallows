@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
   <title>Robbie Gallows | Gothic Expressionist Fine Art</title>
 
   <meta name="description" content="Robbie Gallows creates contemporary gothic expressionist fine art exploring mortality, mythology, spirituality, memory, consciousness, and the human condition through painting and multimedia works.">
-  <meta name="keywords" content="Robbie Gallows, gothic artist, gothic expressionism, dark art, contemporary painting, symbolic art, multimedia artist, surreal gothic art">
+  <meta name="keywords" content="Robbie Gallows, gothic artist, gothic expressionism, dark art, contemporary painting, symbolic art, multimedia artist, surreal gothic art, fine art prints">
   <meta name="author" content="Robbie Gallows">
   <meta name="robots" content="index, follow">
 
@@ -35,7 +36,8 @@
    "url":"https://robbiegallows.vercel.app/",
    "description":"Gothic expressionist artist creating paintings and multimedia works exploring mortality, mythology, memory and consciousness.",
    "sameAs":[
-   "https://instagram.com/robbiegallows"
+     "https://instagram.com/robbiegallows",
+     "https://www.saatchiart.com/robbiegallows"
    ]
   }
   </script>
@@ -116,6 +118,11 @@
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      transition: color .3s ease;
+    }
+
+    .menu a:hover {
+      color: var(--white);
     }
 
     .hero {
@@ -144,6 +151,13 @@
       margin: 30px auto;
     }
 
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     .button {
       display: inline-block;
       padding: 16px 40px;
@@ -155,6 +169,16 @@
     .button:hover {
       background: var(--gold);
       color: #000;
+    }
+
+    .button-secondary {
+      background: var(--gold);
+      color: #000;
+    }
+
+    .button-secondary:hover {
+      background: transparent;
+      color: var(--gold);
     }
 
     @keyframes fade {
@@ -191,6 +215,8 @@
       border: 1px solid var(--line);
       overflow: hidden;
       transition: .4s;
+      display: flex;
+      flex-direction: column;
     }
 
     .art-card:hover {
@@ -208,6 +234,10 @@
 
     .art-info {
       padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .art-info h3 {
@@ -227,6 +257,8 @@
       letter-spacing: 2px;
       color: var(--gold);
       text-transform: uppercase;
+      align-self: flex-start;
+      margin-top: 15px;
     }
 
     .available {
@@ -238,6 +270,30 @@
     .price {
       font-size: 20px;
       color: var(--gold);
+    }
+
+    /* Dedicated Prints Banner */
+    .prints-banner {
+      background: rgba(21, 21, 27, 0.9);
+      border: 1px solid var(--gold);
+      text-align: center;
+      padding: 60px 30px;
+      margin: 40px auto 0;
+      max-width: 1200px;
+      position: relative;
+    }
+
+    .prints-banner h2 {
+      margin-top: 0;
+      font-size: 36px;
+      color: var(--white);
+    }
+
+    .prints-banner p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 30px;
+      font-size: 18px;
     }
 
     .video-box {
@@ -291,6 +347,17 @@
       color: var(--muted);
     }
 
+    .footer-links {
+      margin-top: 15px;
+    }
+
+    .footer-links a {
+      margin: 0 12px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
     .lightbox {
       display: none;
       position: fixed;
@@ -342,6 +409,7 @@
       <nav class="menu">
         <a href="#gallery">Gallery</a>
         <a href="#available">Available</a>
+        <a href="#prints">Buy Prints</a>
         <a href="#multimedia">Media</a>
         <a href="#about">Studio</a>
         <a href="#contact">Contact</a>
@@ -353,7 +421,10 @@
     <div class="hero-content">
       <h1>Robbie Gallows</h1>
       <p>Gothic expressionist fine art exploring mortality, mythology, consciousness, memory, and the unseen spaces between worlds.</p>
-      <a class="button" href="#gallery">Enter The Gallery</a>
+      <div class="hero-buttons">
+        <a class="button" href="#gallery">Enter The Gallery</a>
+        <a class="button button-secondary" href="https://www.saatchiart.com/robbiegallows" target="_blank" rel="noopener">Buy Fine Art Prints</a>
+      </div>
     </div>
   </section>
 
@@ -364,8 +435,10 @@
       <div class="art-card">
         <img src="grim-reaper.png" alt="The Silent Levitation painting by Robbie Gallows" loading="lazy" onclick="openLightbox(this.src)">
         <div class="art-info">
-          <h3>The Silent Levitation</h3>
-          <p>Expressionist oil painting exploring spectral figures, winter landscapes, and the boundary between life and memory.</p>
+          <div>
+            <h3>The Silent Levitation</h3>
+            <p>Expressionist oil painting exploring spectral figures, winter landscapes, and the boundary between life and memory.</p>
+          </div>
           <span class="tag">Original Painting</span>
         </div>
       </div>
@@ -373,8 +446,10 @@
       <div class="art-card">
         <img src="graveyard-piece.jpg" alt="Shadows of Memory mixed media artwork by Robbie Gallows" loading="lazy" onclick="openLightbox(this.src)">
         <div class="art-info">
-          <h3>Shadows of Memory</h3>
-          <p>A layered mixed-media work inspired by gothic romanticism, Victorian symbolism, and forgotten histories.</p>
+          <div>
+            <h3>Shadows of Memory</h3>
+            <p>A layered mixed-media work inspired by gothic romanticism, Victorian symbolism, and forgotten histories.</p>
+          </div>
           <span class="tag">Mixed Media</span>
         </div>
       </div>
@@ -383,19 +458,46 @@
   </section>
 
   <section id="available" class="available">
-    <h2 class="section-title">Available Works</h2>
+    <h2 class="section-title">Available Works & Prints</h2>
     <div class="gallery">
 
       <div class="art-card">
         <img src="graveyard-piece.jpg" alt="Available original artwork by Robbie Gallows" loading="lazy" onclick="openLightbox(this.src)">
         <div class="art-info">
-          <h3>The Forgotten Realm</h3>
-          <p>Original gothic expressionist painting exploring forgotten landscapes, symbolism, and the mysteries of consciousness.</p>
-          <p class="price">Collector Inquiry</p>
+          <div>
+            <h3>The Forgotten Realm</h3>
+            <p>Original gothic expressionist painting exploring forgotten landscapes, symbolism, and the mysteries of consciousness.</p>
+            <p class="price">Collector Inquiry</p>
+          </div>
           <a class="button" href="#contact">Request Details</a>
         </div>
       </div>
 
+      <div class="art-card" style="text-align: center; justify-content: center; padding: 40px 20px;">
+        <h3 style="font-size: 28px; margin-bottom: 15px;">Fine Art Print Collection</h3>
+        <p style="color: var(--muted); margin-bottom: 30px;">
+          Museum-quality museum prints, stretched canvas, and custom framed editions shipped globally via Saatchi Art.
+        </p>
+        <div>
+          <a class="button button-secondary" href="https://www.saatchiart.com/robbiegallows" target="_blank" rel="noopener">
+            Shop Storefront
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Dedicated Saatchi Art Banner -->
+  <section id="prints" style="padding-top: 40px; padding-bottom: 40px;">
+    <div class="prints-banner">
+      <h2>Fine Art Prints & Framed Works</h2>
+      <p>
+        Acquire official museum-quality archival prints, canvas wraps, and custom-framed reproductions directly through my Saatchi Art studio store.
+      </p>
+      <a class="button" href="https://www.saatchiart.com/robbiegallows" target="_blank" rel="noopener">
+        Explore Saatchi Art Store
+      </a>
     </div>
   </section>
 
@@ -445,6 +547,10 @@
   <footer>
     <p>© 2026 Robbie Gallows. All Rights Reserved.</p>
     <p>Gothic Expressionist Fine Art Studio</p>
+    <div class="footer-links">
+      <a href="https://instagram.com/robbiegallows" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.saatchiart.com/robbiegallows" target="_blank" rel="noopener">Saatchi Art</a>
+    </div>
   </footer>
 
   <!-- Lightbox Modal -->
@@ -466,3 +572,4 @@
 </body>
 
 </html>
+
