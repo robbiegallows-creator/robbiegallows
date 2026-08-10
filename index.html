@@ -38,7 +38,8 @@
    "description":"Gothic expressionist artist creating paintings and multimedia works exploring mortality, mythology, memory and consciousness.",
    "sameAs":[
      "https://instagram.com/robbiegallows",
-     "https://www.saatchiart.com/robbiegallows"
+     "https://www.saatchiart.com/robbiegallows",
+     "https://robbiegallowsstudio.substack.com"
    ]
   }
   </script>
@@ -51,6 +52,7 @@
       --panel-border: rgba(197, 160, 89, 0.2);
       --line: #1c1c24;
       --gold: #c5a059;
+      --gold-bright: #e2c071;
       --gold-dim: #7a6133;
       --gold-glow: rgba(197, 160, 89, 0.12);
       --crimson: #4a0e17;
@@ -137,7 +139,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(6, 6, 8, 0.92);
+      background: rgba(6, 6, 8, 0.95);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--panel-border);
@@ -150,17 +152,20 @@
       height: 90px;
     }
 
+    /* Clear & High-Contrast Header Logo */
     .logo {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      letter-spacing: 3px;
-      color: var(--white);
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: #ffffff;
       text-transform: uppercase;
-      text-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
 
     .logo span {
-      color: var(--gold);
+      color: var(--gold-bright);
+      font-weight: 700;
     }
 
     .menu {
@@ -698,6 +703,7 @@
           <a href="#available">Available</a>
           <a href="#prints">Prints</a>
           <a href="#multimedia">Media</a>
+          <a href="https://robbiegallowsstudio.substack.com" target="_blank" rel="noopener">Substack</a>
           <a href="#about">Studio</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -714,6 +720,7 @@
         <p>A dark visual journey investigating architectural decay, gothic iconography, mortality, and the physical weight of time through hybrid digital painting and heavy impasto textures.</p>
         <div class="hero-buttons">
           <a class="btn btn-solid" href="#gallery">Enter The Gallery</a>
+          <a class="btn" href="https://robbiegallowsstudio.substack.com" target="_blank" rel="noopener">Read Substack</a>
           <a class="btn" href="https://www.saatchiart.com/robbiegallows" target="_blank" rel="noopener">Saatchi Fine Art Store</a>
         </div>
       </div>
@@ -873,6 +880,7 @@
       <p style="font-size: 0.85rem; color: var(--gold-dim); margin-top: 5px;">Gothic Expressionism & Fine Art Studio — Toronto</p>
       <div class="footer-links">
         <a href="https://instagram.com/robbiegallows" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://robbiegallowsstudio.substack.com" target="_blank" rel="noopener">Substack</a>
         <a href="https://www.saatchiart.com/robbiegallows" target="_blank" rel="noopener">Saatchi Art</a>
         <a href="https://robbiegallows.vercel.app/">Official Portfolio</a>
       </div>
