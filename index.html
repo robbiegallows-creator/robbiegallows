@@ -478,6 +478,44 @@
       border: 0;
     }
 
+    /* In Studio Section */
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .studio-frame {
+      border: 1px solid var(--gold);
+      padding: 15px;
+      background: var(--panel);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.9);
+      position: relative;
+    }
+
+    .studio-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: brightness(0.92) contrast(1.08);
+      border: 1px solid var(--line);
+    }
+
+    .studio-text h3 {
+      font-size: 1.8rem;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .studio-text p {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+
     /* Artist Statement Grid */
     .statement-grid {
       display: grid;
@@ -660,7 +698,8 @@
 
     /* Media Queries */
     @media (max-width: 900px) {
-      .statement-grid {
+      .statement-grid,
+      .studio-grid {
         grid-template-columns: 1fr;
       }
 
@@ -709,7 +748,7 @@
         <div class="logo">Robbie <span>Gallows</span></div>
         <nav class="menu">
           <a href="#gallery">Works</a>
-          <a href="#available">Available</a>
+          <a href="#instudio">In Studio</a>
           <a href="#prints">Prints</a>
           <a href="#multimedia">Media</a>
           <a href="#press">Press</a>
@@ -807,6 +846,29 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- In Studio Section -->
+  <section id="instudio" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Process & Environment</span>
+        <h2 class="section-title">In Studio</h2>
+      </div>
+
+      <div class="studio-grid">
+        <div class="studio-frame">
+          <img src="Robbie_working_instudio.jpg" alt="Robbie Gallows working in studio" loading="lazy">
+        </div>
+        <div class="studio-text">
+          <span class="badge" style="margin-bottom: 15px;">Tactile & Hybrid Workflow</span>
+          <h3>Where Physical Meets Digital</h3>
+          <p>"Every canvas starts with a digital foundation, printed onto canvas before being heavily worked over with physical oil paints and Mod Podge to construct tactile, dimensional textures."</p>
+          <p>This hands-on impasto technique creates a tangible surface depth that grounds the atmospheric and dark, chiaroscuro themes of each piece in the physical realm.</p>
+          <a class="btn" href="https://robbiegallowsstudio.substack.com" target="_blank" rel="noopener">Read Studio Updates on Substack</a>
+        </div>
       </div>
     </div>
   </section>
