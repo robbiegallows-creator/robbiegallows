@@ -328,7 +328,7 @@
     /* Gallery Grid & Responsive Framing */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 40px;
     }
 
@@ -610,12 +610,13 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(2, 2, 3, 0.97);
+      background: rgba(2, 2, 3, 0.95);
       backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       z-index: 1000;
       justify-content: center;
       align-items: center;
-      padding: 30px;
+      padding: 20px;
       opacity: 0;
       transition: opacity 0.4s ease;
     }
@@ -626,33 +627,48 @@
     }
 
     .lightbox-content {
-      max-width: 1100px;
+      max-width: 1050px;
       width: 100%;
       max-height: 90vh;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 40px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 30px;
       background: var(--panel);
       border: 1px solid var(--gold);
-      padding: 35px;
+      padding: 30px;
       position: relative;
       box-shadow: 0 0 50px rgba(0,0,0,0.95);
+      overflow-y: auto;
+    }
+
+    .lightbox-img-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
     }
 
     .lightbox-img-container {
-      max-height: 70vh;
+      width: 100%;
+      max-height: 65vh;
       display: flex;
       align-items: center;
       justify-content: center;
       background: #000;
       border: 1px solid var(--line);
       padding: 10px;
+      overflow: hidden;
     }
 
     .lightbox-img-container img {
-      max-height: 65vh;
+      max-height: 60vh;
       max-width: 100%;
+      width: auto;
+      height: auto;
       object-fit: contain;
+      display: block;
     }
 
     .lightbox-details {
@@ -662,7 +678,7 @@
     }
 
     .lightbox-details h3 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: var(--white);
       margin-bottom: 15px;
     }
@@ -682,6 +698,7 @@
       background: none;
       border: none;
       transition: color 0.3s;
+      z-index: 10;
     }
 
     .lightbox-close:hover {
@@ -694,6 +711,7 @@
       gap: 12px;
       margin-top: 15px;
       justify-content: center;
+      width: 100%;
     }
 
     /* Media Queries */
@@ -706,11 +724,14 @@
       .lightbox-content {
         grid-template-columns: 1fr;
         max-height: 90vh;
-        overflow-y: auto;
       }
 
       .lightbox-img-container {
         max-height: 45vh;
+      }
+
+      .lightbox-img-container img {
+        max-height: 40vh;
       }
     }
 
@@ -788,7 +809,7 @@
 
         <!-- Card 1 -->
         <div class="art-card">
-          <div class="art-thumb-wrapper" onclick="openLightbox('The-Last-Confession.jpeg', 'The-Last-Confession-detail.jpeg', 'The Last Confession', 'An examination of spectral presence and existential memory within the series. Utilizing Renaissance-inspired chiaroscuro lighting and layered impasto depth, this piece explores the boundary between mortal physical space and forgotten temporal realms.', 'Digital Gothic Realism')">
+          <div class="art-thumb-wrapper" onclick="openLightbox('The-Last-Confession.jpeg', '', 'The Last Confession', 'An examination of spectral presence and existential memory within the series. Utilizing Renaissance-inspired chiaroscuro lighting and layered impasto depth, this piece explores the boundary between mortal physical space and forgotten temporal realms.', 'Digital Gothic Realism')">
             <img src="The-Last-Confession.jpeg" alt="The Last Confession by Robbie Gallows" loading="lazy">
             <div class="art-overlay">
               <span class="btn">View Artwork</span>
@@ -808,7 +829,7 @@
 
         <!-- Card 2 -->
         <div class="art-card">
-          <div class="art-thumb-wrapper" onclick="openLightbox('The-Orb.jpg', 'The-Orb-detail.jpg', 'The Orb', 'Part of The Litany of Lost Hours series, The Orb investigates gothic iconography, spiritual transition, and architectural decay. Layered with tactile impasto oil aesthetics and dark surrealism to embody the physical weight of lost hours.', 'Hybrid Impasto & Digital')">
+          <div class="art-thumb-wrapper" onclick="openLightbox('The-Orb.jpg', '', 'The Orb', 'Part of The Litany of Lost Hours series, The Orb investigates gothic iconography, spiritual transition, and architectural decay. Layered with tactile impasto oil aesthetics and dark surrealism to embody the physical weight of lost hours.', 'Hybrid Impasto Work')">
             <img src="The-Orb.jpg" alt="The Orb by Robbie Gallows" loading="lazy">
             <div class="art-overlay">
               <span class="btn">View Artwork</span>
@@ -828,7 +849,27 @@
 
         <!-- Card 3 -->
         <div class="art-card">
-          <div class="art-thumb-wrapper" onclick="openLightbox('graveyard-piece.jpg', 'graveyard-piece-detail.jpg', 'Cathedral of Ashes', 'Featured in the Juxtapoz editorial portfolio submission, Cathedral of Ashes anchors The Litany of Lost Hours series. It explores architectural decay, dark surrealism, and human mortality through dramatically layered digital painting and heavy impasto textures.', 'Available Original Edition')">
+          <div class="art-thumb-wrapper" onclick="openLightbox('ticking-towards-yesterday.jpg', '', 'Ticking Towards Yesterday', 'An exploration of temporal decay, consciousness, and physical erosion within The Litany of Lost Hours series. Heavy cracked textures and bleeding clockwork motifs meditate on the passage of time.', 'Gothic Expressionism')">
+            <img src="ticking-towards-yesterday.jpg" alt="Ticking Towards Yesterday by Robbie Gallows" loading="lazy">
+            <div class="art-overlay">
+              <span class="btn">View Artwork</span>
+            </div>
+          </div>
+          <div class="art-info">
+            <div>
+              <h3>Ticking Towards Yesterday</h3>
+              <p>Meditating on the erosion of memory, temporal decay, and mortality through visceral cracked textures and symbolic clockwork motifs.</p>
+            </div>
+            <div class="art-meta">
+              <span class="badge">Gothic Expressionism</span>
+              <span class="badge" style="border-color: var(--gold-dim);">Available Original</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="art-card">
+          <div class="art-thumb-wrapper" onclick="openLightbox('graveyard-piece.jpg', '', 'Cathedral of Ashes', 'Featured in the Juxtapoz editorial portfolio submission, Cathedral of Ashes anchors The Litany of Lost Hours series. It explores architectural decay, dark surrealism, and human mortality through dramatically layered digital painting and heavy impasto textures.', 'Available Original Edition')">
             <img src="graveyard-piece.jpg" alt="Cathedral of Ashes by Robbie Gallows" loading="lazy">
             <div class="art-overlay">
               <span class="btn">View Artwork</span>
@@ -860,7 +901,7 @@
 
       <div class="studio-grid">
         <div class="studio-frame">
-          <img src="Robbie_working_instudio.jpg" alt="Robbie Gallows working in studio" loading="lazy">
+          <img src="RobbieGallows_InStudio_TheLitanyOfLostHours.jpg" alt="Robbie Gallows working in studio on The Litany of Lost Hours" loading="lazy">
         </div>
         <div class="studio-text">
           <span class="badge" style="margin-bottom: 15px;">Tactile & Hybrid Workflow</span>
@@ -987,7 +1028,7 @@
   <div class="lightbox" id="lightbox">
     <div class="lightbox-content">
       <button class="lightbox-close" onclick="closeLightbox()">×</button>
-      <div>
+      <div class="lightbox-img-wrapper">
         <div class="lightbox-img-container">
           <img id="lightbox-img" src="" alt="Artwork Preview">
         </div>
@@ -1024,8 +1065,8 @@
       const lightbox = document.getElementById('lightbox');
       
       currentFullImg = imgSrc;
-      // Fallback to full image if detail image is not yet available
-      currentDetailImg = detailSrc || imgSrc;
+      // Fallback to full image if detail image is not provided
+      currentDetailImg = (detailSrc && detailSrc.trim() !== '') ? detailSrc : imgSrc;
 
       document.getElementById('lightbox-img').src = currentFullImg;
       document.getElementById('lightbox-title').innerText = title;
