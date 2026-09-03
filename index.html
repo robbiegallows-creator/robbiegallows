@@ -1,1178 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Robbie Gallows | Gothic Expressionist Artist | Mixed-Media Painting</title>
-
-  <meta name="description" content="Robbie Gallows is a gothic expressionist artist specializing in contemporary mixed-media painting. Exploring dark spectral landscapes and textured impasto gothic art through an AI and traditional hybrid process.">
-  <meta name="keywords" content="Gothic Expressionist Artist, Contemporary Mixed-Media Painting, Dark Spectral Landscape Art, AI and Traditional Hybrid Art, Textured Impasto Gothic Art, Robbie Gallows Artist">
-  <meta name="author" content="Robbie Gallows">
-  <meta name="robots" content="index, follow">
-
-  <link rel="canonical" href="https://robbiegallows.vercel.app/">
-
-  <!-- Social Sharing -->
-  <meta property="og:title" content="Robbie Gallows | Gothic Expressionist Fine Art">
-  <meta property="og:description" content="A dark visual journey through mortality, mythology, memory, consciousness, and the unseen worlds.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://robbiegallows.vercel.app/">
-  <meta property="og:image" content="https://robbiegallows.vercel.app/public/grim-reaper.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-   "@context":"https://schema.org",
-   "@type":"VisualArtist",
-   "name":"Robbie Gallows",
-   "url":"https://robbiegallows.vercel.app/",
-   "description":"Gothic expressionist artist creating paintings and multimedia works exploring mortality, mythology, memory and consciousness.",
-   "sameAs":[
-     "https://instagram.com/robbiegallows",
-     "https://www.saatchiart.com/robbiegallows",
-     "https://robbiegallowsstudio.substack.com",
-     "https://share.google/zPPxQbSMCHw86DMrc"
-   ]
-  }
-  </script>
-
-  <style>
-    :root {
-      --void: #020203;
-      --obsidian: #060608;
-      --panel: #0d0d12;
-      --panel-border: rgba(197, 160, 89, 0.2);
-      --line: #1c1c24;
-      --gold: #c5a059;
-      --gold-bright: #e2c071;
-      --gold-dim: #7a6133;
-      --gold-glow: rgba(197, 160, 89, 0.12);
-      --crimson: #4a0e17;
-      --crimson-glow: rgba(74, 14, 23, 0.35);
-      --white: #e8e4dc;
-      --muted: #99958d;
-      --font-heading: 'Cinzel', serif;
-      --font-display: 'Cinzel Decorative', serif;
-      --font-serif: 'Cormorant Garamond', serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--void);
-      color: var(--white);
-      font-family: var(--font-sans);
-      line-height: 1.8;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Atmospheric Gothic Background Overlay */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: 
-        radial-gradient(circle at 50% 0%, var(--crimson-glow) 0%, transparent 70%),
-        radial-gradient(circle at 50% 100%, var(--gold-glow) 0%, transparent 60%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.09'/%3E%3C/svg%3E");
-      z-index: 1;
-    }
-
-    /* Ambient Cursor Light */
-    #cursor-glow {
-      position: fixed;
-      width: 450px;
-      height: 450px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--gold-glow) 0%, rgba(0,0,0,0) 70%);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      transition: opacity 0.3s ease;
-      mix-blend-mode: screen;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: var(--font-heading);
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    p {
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    a {
-      color: var(--gold);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 30px;
-      position: relative;
-      z-index: 5;
-    }
-
-    /* Gothic Ornamented Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(6, 6, 8, 0.95);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--panel-border);
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 90px;
-    }
-
-    /* Clear & High-Contrast Header Logo */
-    .logo {
-      font-family: var(--font-heading);
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-      color: #ffffff;
-      text-transform: uppercase;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-    }
-
-    .logo span {
-      color: var(--gold-bright);
-      font-weight: 700;
-    }
-
-    .menu {
-      display: flex;
-      gap: 30px;
-    }
-
-    .menu a {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--muted);
-      position: relative;
-      padding: 5px 0;
-    }
-
-    .menu a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-
-    .menu a:hover {
-      color: var(--gold);
-    }
-
-    .menu a:hover::after {
-      width: 100%;
-    }
-
-    /* Hero Section */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 0;
-      position: relative;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      position: relative;
-    }
-
-    .hero-subtitle {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 1.4rem;
-      color: var(--gold);
-      margin-bottom: 15px;
-      letter-spacing: 2px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
-      line-height: 1.15;
-      margin-bottom: 25px;
-      color: var(--white);
-      text-shadow: 0 0 20px rgba(0,0,0,0.9), 0 0 30px rgba(74, 14, 23, 0.5);
-    }
-
-    .hero h1 span {
-        display: block;
-        font-family: var(--font-sans);
-        font-size: 1rem;
-        font-weight: 300;
-        letter-spacing: 0.5px;
-        margin-top: 10px;
-        color: var(--muted);
-        text-shadow: none;
-        text-transform: none;
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-      max-width: 760px;
-      margin: 0 auto 40px;
-      font-weight: 300;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* Gothic Frame Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 36px;
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      background: rgba(13, 13, 18, 0.8);
-      cursor: pointer;
-      transition: all 0.4s ease;
-      position: relative;
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
-    }
-
-    .btn:hover {
-      color: var(--void);
-      background: var(--gold);
-      box-shadow: 0 0 25px rgba(197, 160, 89, 0.4);
-    }
-
-    .btn-solid {
-      background: var(--gold);
-      color: var(--void);
-      font-weight: 600;
-    }
-
-    .btn-solid:hover {
-      background: var(--white);
-      border-color: var(--white);
-      color: var(--void);
-      box-shadow: 0 0 25px rgba(232, 228, 220, 0.4);
-    }
-
-    /* Sections */
-    .section {
-      padding: 110px 0;
-      border-bottom: 1px solid var(--line);
-      position: relative;
-      z-index: 5;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .section-tag {
-      font-family: var(--font-serif);
-      font-style: italic;
-      color: var(--gold);
-      font-size: 1.25rem;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--white);
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-title::after {
-      content: '✦';
-      display: block;
-      font-size: 0.9rem;
-      color: var(--gold-dim);
-      margin-top: 10px;
-    }
-
-    /* Gallery Grid & Responsive Framing */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 40px;
-    }
-
-    .art-card {
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.4s ease;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.9);
-    }
-
-    .art-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.95), 0 0 25px rgba(197, 160, 89, 0.15);
-    }
-
-    /* Screen-Fit Image Containers */
-    .art-thumb-wrapper {
-      position: relative;
-      width: 100%;
-      height: 480px;
-      background: #000;
-      cursor: pointer;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .art-thumb-wrapper img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      transition: transform 0.6s ease, filter 0.6s ease;
-      filter: brightness(0.9) contrast(1.05);
-    }
-
-    .art-card:hover .art-thumb-wrapper img {
-      transform: scale(1.03);
-      filter: brightness(1) contrast(1.1);
-    }
-
-    .art-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(2, 2, 3, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .art-card:hover .art-overlay {
-      opacity: 1;
-    }
-
-    .art-info {
-      padding: 30px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .art-info h3 {
-      font-size: 1.3rem;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-
-    .art-info p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .art-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 15px;
-      border-top: 1px dashed var(--line);
-    }
-
-    .badge {
-      display: inline-block;
-      font-size: 0.68rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--gold-dim);
-      padding: 4px 10px;
-      background: rgba(197, 160, 89, 0.05);
-    }
-
-    /* Print & Press Banners */
-    .banner-box {
-      background: linear-gradient(135deg, rgba(13,13,18,0.95) 0%, rgba(20,10,15,0.95) 100%);
-      border: 1px solid var(--gold);
-      padding: 70px 40px;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 0 50px rgba(0,0,0,0.95);
-    }
-
-    .banner-box h2 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-      color: var(--white);
-    }
-
-    .banner-box p {
-      max-width: 680px;
-      margin: 0 auto 35px;
-      font-size: 1.1rem;
-    }
-
-    /* Video Frame Container */
-    .video-wrapper {
-      max-width: 920px;
-      margin: 0 auto;
-      border: 1px solid var(--gold-dim);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.95);
-      background: #000;
-    }
-
-    .video-box {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-    }
-
-    .video-box iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* In Studio Section */
-    .studio-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .studio-frame {
-      border: 1px solid var(--gold);
-      padding: 15px;
-      background: var(--panel);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.9);
-      position: relative;
-    }
-
-    .studio-frame img {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: brightness(0.92) contrast(1.08);
-      border: 1px solid var(--line);
-    }
-
-    .studio-text h3 {
-      font-size: 1.8rem;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
-
-    .studio-text p {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      color: var(--white);
-    }
-
-    /* Artist Statement Grid */
-    .statement-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .statement-card {
-      background: var(--panel);
-      padding: 50px;
-      border: 1px solid var(--panel-border);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.8);
-    }
-
-    .statement-card p {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      line-height: 1.9;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
-
-    .timeline {
-      border-left: 1px solid var(--gold);
-      padding-left: 35px;
-      display: flex;
-      flex-direction: column;
-      gap: 35px;
-    }
-
-    .timeline-item h3 {
-      font-size: 1.1rem;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    /* Contact Block */
-    .contact-card {
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      padding: 70px 40px;
-      text-align: center;
-      max-width: 820px;
-      margin: 0 auto;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.9);
-    }
-
-    .contact-card a.email-link {
-      font-family: var(--font-serif);
-      font-size: clamp(1.5rem, 3vw, 2.5rem);
-      color: var(--gold);
-      display: inline-block;
-      margin: 20px 0;
-      word-break: break-all;
-    }
-
-    .contact-card a.email-link:hover {
-      color: var(--white);
-      text-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
-    }
-
-    footer {
-      background: var(--obsidian);
-      border-top: 1px solid var(--line);
-      padding: 50px 0;
-      text-align: center;
-      position: relative;
-      z-index: 5;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 20px;
-    }
-
-    .footer-links a {
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .footer-links a:hover {
-      color: var(--gold);
-    }
-
-    /* Screen-Fit Lightbox Modal */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(2, 2, 3, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .lightbox.active {
-      display: flex;
-      opacity: 1;
-    }
-
-    .lightbox-content {
-      max-width: 1050px;
-      width: 100%;
-      max-height: 90vh;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 30px;
-      background: var(--panel);
-      border: 1px solid var(--gold);
-      padding: 30px;
-      position: relative;
-      box-shadow: 0 0 50px rgba(0,0,0,0.95);
-      overflow-y: auto;
-    }
-
-    .lightbox-img-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-    }
-
-    .lightbox-img-container {
-      width: 100%;
-      max-height: 65vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #000;
-      border: 1px solid var(--line);
-      padding: 10px;
-      overflow: hidden;
-    }
-
-    .lightbox-img-container img {
-      max-height: 60vh;
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      display: block;
-    }
-
-    .lightbox-details {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .lightbox-details h3 {
-      font-size: 1.8rem;
-      color: var(--white);
-      margin-bottom: 15px;
-    }
-
-    .lightbox-details p {
-      margin-bottom: 25px;
-      line-height: 1.8;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 2.2rem;
-      color: var(--gold);
-      cursor: pointer;
-      background: none;
-      border: none;
-      transition: color 0.3s;
-      z-index: 10;
-    }
-
-    .lightbox-close:hover {
-      color: var(--white);
-    }
-
-    /* Texture View Switcher Controls inside Lightbox */
-    .lightbox-view-toggle {
-      display: flex;
-      gap: 12px;
-      margin-top: 15px;
-      justify-content: center;
-      width: 100%;
-    }
-
-    /* Media Queries */
-    @media (max-width: 900px) {
-      .statement-grid,
-      .studio-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .lightbox-content {
-        grid-template-columns: 1fr;
-        max-height: 90vh;
-      }
-
-      .lightbox-img-container {
-        max-height: 45vh;
-      }
-
-      .lightbox-img-container img {
-        max-height: 40vh;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav {
-        flex-direction: column;
-        justify-content: center;
-        gap: 15px;
-        height: auto;
-        padding: 20px 0;
-      }
-
-      .menu {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .art-thumb-wrapper {
-        height: 380px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robbie Gallows | Gothic Expressionist Artist — Victorian Graveyard Edition</title>
+<meta name="description" content="Robbie Gallows is a gothic expressionist artist. Victorian graveyard edition — Black foundation, Blood Red romance, Deep Purple royalty, Midnight Blue night sky, Dark Emerald overgrown moss, Charcoal tombstone shadow.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+ --black:#040406; --obsidian:#08080b; --charcoal:#1a1a1e; --line:#2a2a32; --muted:#9a9590; --white:#e8e4dc;
+ --crimson:#8a1422; --burgundy:#6e1023; --purple:#2d1b4e; --amethyst:#4a2d7a; --midnight:#0a1931; --emerald:#0f2a1d; --emerald2:#1a3d2a;
+}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.8;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:
+ url('public/graveyard-mist.jpg'),
+ radial-gradient(circle at 50% 8%, rgba(138,20,34,0.14) 0%, transparent 55%),
+ radial-gradient(circle at 18% 15%, rgba(45,27,78,0.18) 0%, transparent 50%),
+ radial-gradient(circle at 85% 90%, rgba(10,25,49,0.32) 0%, transparent 62%),
+ radial-gradient(circle at 10% 88%, rgba(15,42,29,0.20) 0%, transparent 52%);
+ background-size:cover, auto, auto, auto, auto;
+ background-position:center top, center, center, center, center;
+ opacity:0.55;
+ mix-blend-mode:screen;
+}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:linear-gradient(180deg, rgba(4,4,6,0.2) 0%, rgba(4,4,6,0.85) 100%);}
+h1,h2,h3{font-family:'Cinzel',serif;letter-spacing:2.5px;text-transform:uppercase}
+.container{max-width:1280px;margin:0 auto;padding:0 30px;position:relative;z-index:1}
+header{position:sticky;top:0;z-index:100;background:rgba(4,4,6,0.92);backdrop-filter:blur(16px);border-bottom:1px solid #1f1f28}
+.nav-wrap{display:flex;flex-direction:column;align-items:center;padding:26px 0 20px}
+.logo{font-family:'Cinzel Decorative',serif;font-size:2rem;letter-spacing:6px;color:#fff;text-shadow:0 2px 20px rgba(138,20,34,0.5), 0 0 40px rgba(45,27,78,0.3)}
+.logo span{color:var(--crimson)}
+.sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.08rem;color:var(--muted);letter-spacing:2.5px;margin-top:6px}
+.menu{display:flex;gap:30px;margin-top:20px;flex-wrap:wrap;justify-content:center}
+.menu a{font-size:0.72rem;letter-spacing:3.2px;text-transform:uppercase;color:#888;text-decoration:none;position:relative;padding:4px 0;transition:.35s}
+.menu a::after{content:"";position:absolute;bottom:0;left:50%;width:0;height:1px;background:linear-gradient(90deg,var(--crimson),var(--amethyst));transform:translateX(-50%);transition:.35s}
+.menu a:hover{color:var(--crimson)}.menu a:hover::after{width:100%}
+.graveyard-divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:64px 0;color:#444}
+.graveyard-divider::before,.graveyard-divider::after{content:"";height:1px;flex:1;max-width:260px;background:linear-gradient(90deg,transparent,#2a2a32,transparent)}
+.graveyard-divider .icon{font-family:'Cinzel',serif;letter-spacing:10px;color:var(--crimson);font-size:0.9rem}
+.hero{min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 0;position:relative}
+.hero-grave-bg{position:absolute;inset:0;z-index:0;opacity:0.18;background:url('public/winged-reaper.jpg') center/cover no-repeat;filter:brightness(0.35) contrast(1.1) blur(1px);mask-image:linear-gradient(180deg, black 0%, transparent 95%)}
+.hero-frame{background:var(--charcoal);border:1px solid #2a2a32;padding:14px;position:relative;z-index:1;box-shadow:0 30px 80px rgba(0,0,0,0.96),0 0 0 1px var(--burgundy) inset,0 0 60px rgba(45,27,78,0.35);max-width:560px;margin:0 auto 36px}
+.hero-frame::before{content:"";position:absolute;inset:8px;border:1px solid rgba(138,20,34,0.22);pointer-events:none}
+.hero-frame::after{content:"†";position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);background:var(--charcoal);color:var(--crimson);padding:0 12px;font-family:'Cinzel',serif;font-size:1.2rem}
+.hero-frame img{width:100%;display:block;filter:brightness(0.93) contrast(1.06)}
+.hero .tag{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--crimson);font-size:1.25rem;display:block;margin-bottom:10px;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.5rem,5.2vw,4.2rem);line-height:1.08;margin:10px 0 20px;position:relative;z-index:1}
+.hero h1 em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;text-transform:none;letter-spacing:1px;color:var(--muted);display:block;font-size:1.25rem;margin-top:10px}
+.hero p{color:var(--muted);max-width:740px;margin:0 auto 36px;font-size:1.08rem;position:relative;z-index:1}
+.btn{display:inline-flex;padding:15px 32px;font-size:0.72rem;letter-spacing:2.6px;text-transform:uppercase;text-decoration:none;border:1px solid;transition:.4s;cursor:pointer}
+.btn-crimson{background:var(--crimson);border-color:var(--crimson);color:#fff}.btn-crimson:hover{background:#a01a2a;box-shadow:0 0 28px rgba(138,20,34,0.55)}
+.btn-outline{border-color:#2a2a32;color:var(--muted);background:rgba(26,26,30,0.85)}.btn-outline:hover{border-color:var(--crimson);color:var(--crimson)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.section{padding:110px 0;border-bottom:1px solid #1f1f28;position:relative;z-index:1}
+.head{text-align:center;margin-bottom:58px}.head .tag{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--crimson);font-size:1.25rem;display:block;margin-bottom:8px}.stitle{font-size:clamp(1.9rem,3.6vw,2.8rem)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:38px}
+.card{background:linear-gradient(180deg, #1a1a1e 0%, #15151a 100%);border:1px solid #2a2a32;transition:.45s;box-shadow:0 16px 38px rgba(0,0,0,0.88), inset 0 1px 0 rgba(255,255,255,0.04);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent, rgba(138,20,34,0.3), transparent);opacity:0;transition:.45s}
+.card:hover{border-color:var(--crimson);transform:translateY(-6px);box-shadow:0 28px 60px rgba(0,0,0,0.98),0 0 28px rgba(45,27,78,0.24)}
+.card:hover::before{opacity:1}
+.thumb{height:470px;background:#000;display:flex;align-items:center;justify-content:center;padding:10px;position:relative;overflow:hidden;cursor:pointer;border-bottom:1px solid #1f1f28}
+.thumb img{max-width:100%;max-height:100%;object-fit:contain;transition:.65s;filter:brightness(0.92)}.card:hover .thumb img{transform:scale(1.04);filter:brightness(1)}
+.overlay{position:absolute;inset:0;background:rgba(4,4,6,0.62);display:flex;align-items:center;justify-content:center;opacity:0;transition:.38s}.card:hover .overlay{opacity:1}
+.info{padding:28px;flex:1;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.info::after{content:"";position:absolute;bottom:0;left:28px;right:28px;height:1px;background:linear-gradient(90deg, transparent, rgba(15,42,29,0.3), transparent)}
+.info h3{font-size:1.18rem;margin-bottom:10px}.info p{color:var(--muted);font-family:'Cormorant Garamond',serif;font-size:1.06rem;line-height:1.65;margin-bottom:16px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;padding-top:14px;border-top:1px dashed #2a2a32}
+.badge{font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border:1px solid}
+.b-crimson{color:var(--crimson);border-color:rgba(138,20,34,0.5);background:rgba(138,20,34,0.09)}
+.b-purple{color:#9d82d6;border-color:rgba(74,45,122,0.55);background:rgba(45,27,78,0.18)}
+.b-midnight{color:#7ea0d6;border-color:rgba(10,25,49,0.7);background:rgba(10,25,49,0.18)}
+.b-emerald{color:#6ab085;border-color:rgba(15,42,29,0.65);background:rgba(15,42,29,0.18)}
+.b-charcoal{color:var(--muted);border-color:#2a2a32;background:rgba(255,255,255,0.03)}
+.banner{border:1px solid var(--burgundy);padding:70px 40px;text-align:center;background:linear-gradient(135deg, rgba(26,26,30,0.97) 0%, rgba(10,25,49,0.42) 50%, rgba(15,42,29,0.18) 100%);box-shadow:0 24px 60px rgba(0,0,0,0.94);position:relative}
+.banner::before{content:"† † †";position:absolute;top:16px;left:50%;transform:translateX(-50%);color:rgba(138,20,34,0.35);font-family:'Cinzel',serif;letter-spacing:12px;font-size:0.8rem}
+.studio{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.frame{border:1px solid #2a2a32;padding:12px;background:var(--charcoal);box-shadow:0 22px 48px rgba(0,0,0,0.9);position:relative}
+.frame.emerald{border-color:#1a3d2a;box-shadow:0 0 0 1px #0f2a1d inset,0 22px 48px rgba(0,0,0,0.9)}
+.frame.midnight{border-color:#12243f;box-shadow:0 0 0 1px #0a1931 inset,0 22px 48px rgba(0,0,0,0.9)}
+.frame img{width:100%;display:block}
+.frame::after{content:"";position:absolute;bottom:-8px;left:20px;right:20px;height:18px;background:radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, transparent 70%);filter:blur(6px);z-index:-1}
+.press{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.press-card{background:linear-gradient(180deg, #1a1a1e 0%, #16161b 100%);border:1px solid #2a2a32;padding:38px;position:relative}
+.press-card.crimson{border-left:3px solid var(--crimson)}.press-card.purple{border-left:3px solid var(--amethyst)}
+.video-wrap{max-width:920px;margin:0 auto;border:1px solid #12243f;box-shadow:0 0 0 1px #0a1931 inset,0 24px 60px rgba(0,0,0,0.94);background:#000}
+.vbox{position:relative;padding-bottom:56.25%;height:0}.vbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.contact{max-width:780px;margin:0 auto;background:linear-gradient(180deg, #1a1a1e 0%, #15151a 100%);border:1px solid #2a2a32;padding:68px 40px;text-align:center;position:relative}
+.contact::before{content:"R.I.P.";position:absolute;top:18px;right:24px;color:rgba(138,20,34,0.15);font-family:'Cinzel',serif;font-size:2.4rem;letter-spacing:8px}
+.email{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.4rem);color:var(--crimson);word-break:break-all;text-decoration:none;display:inline-block;margin:18px 0}.email:hover{color:#fff;text-shadow:0 0 18px rgba(138,20,34,0.5)}
+footer{background:#020203;border-top:1px solid #1f1f28;padding:52px 0;text-align:center;position:relative}
+footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent, var(--crimson), transparent);opacity:0.3}
+.flinks{display:flex;gap:24px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.flinks a{font-size:0.72rem;letter-spacing:2.2px;text-transform:uppercase;color:#666;text-decoration:none}.flinks a:hover{color:var(--crimson)}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(4,4,6,0.96);backdrop-filter:blur(18px);z-index:999;align-items:center;justify-content:center;padding:20px}
+.lightbox.active{display:flex}
+.lb-content{max-width:1080px;width:100%;max-height:90vh;display:grid;grid-template-columns:1.25fr 1fr;gap:30px;background:var(--charcoal);border:1px solid var(--crimson);padding:30px;overflow:auto;position:relative}
+.lb-img{max-height:68vh;display:flex;align-items:center;justify-content:center;background:#000;padding:10px;border:1px solid #2a2a32}
+.lb-img img{max-width:100%;max-height:64vh;object-fit:contain}
+.close{position:absolute;top:14px;right:20px;font-size:2.2rem;color:var(--crimson);background:none;border:none;cursor:pointer;z-index:2}
+@media(max-width:920px){.studio,.press,.lb-content{grid-template-columns:1fr}.lb-img{max-height:44vh}}
+</style>
 </head>
-
 <body>
+<header>
+<div class="container">
+<div class="nav-wrap">
+<div class="logo">Robbie <span>Gallows</span></div>
+<div class="sub">Victorian Graveyard Edition • Gothic Expressionist • Toronto • Saatchi Art</div>
+<nav class="menu">
+<a href="#gallery">Works</a>
+<a href="#instudio">In Studio</a>
+<a href="#film">Film</a>
+<a href="#prints">Prints</a>
+<a href="#press">Press</a>
+<a href="#about">Statement</a>
+<a href="#contact">Contact</a>
+<a href="https://instagram.com/robbiegallows" target="_blank">Instagram</a>
+<a href="https://www.saatchiart.com/robbiegallows" target="_blank">Saatchi</a>
+</nav>
+</div>
+</div>
+</header>
 
-  <!-- Ambient Cursor Light -->
-  <div id="cursor-glow"></div>
+<section class="hero">
+<div class="hero-grave-bg"></div>
+<div class="container">
+<div class="hero-frame">
+<img src="public/hero-orange-girl.jpg" alt="Ticking Towards Yesterday — Graveyard Edition">
+</div>
+<span class="tag">Victorian Graveyard Edition • Featured in DARKLY Art Magazine 065-070</span>
+<h1>TICKING TOWARDS <em>Yesterday — Amongst the Graves</em></h1>
+<p>Black foundation of gothic mystery, Blood Red romance and tragedy over fresh graves, Deep Purple royalty buried in aristocratic tombs, Midnight Blue ominous night sky over cemetery, Dark Emerald overgrown moss reclaiming stones, Charcoal tombstone shadow. Hybrid digital + heavy impasto oil + Mod Podge. BFA Film • Filmmaker.</p>
+<div class="hero-btns">
+<a class="btn btn-crimson" href="#gallery">Enter the Graveyard Gallery</a>
+<a class="btn btn-outline" href="https://www.saatchiart.com/robbiegallows" target="_blank">Saatchi Store</a>
+</div>
+</div>
+</section>
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="nav">
-        <div class="logo">Robbie <span>Gallows</span></div>
-        <nav class="menu">
-          <a href="#gallery">Works</a>
-          <a href="#instudio">In Studio</a>
-          <a href="#prints">Prints</a>
-          <a href="#multimedia">Media</a>
-          <a href="#press">Press</a>
-          <a href="https://robbiegallowsstudio.substack.com" target="_blank" rel="noopener">Substack</a>
-          <a href="#about">Studio</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+<div class="graveyard-divider"><span class="icon">† — ✦ — †</span></div>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <span class="hero-subtitle">Gothic Expressionist Artist & Mixed-Media Painting</span>
-        <h1>Robbie Gallows: Gothic Expressionist & Mixed-Media Artist
-            <span>A Juried Presentation for Juxtapoz Magazine Editorial Spotlight</span>
-        </h1>
-        <p>A dark visual journey investigating architectural decay, gothic iconography, mortality, and the physical weight of time through hybrid digital painting and heavy impasto textures.</p>
-        <div class="hero-buttons">
-          <a class="btn btn-solid" href="#gallery">Enter The Gallery</a>
-          <a class="btn" href="https://robbiegallowsstudio.substack.com" target="_blank" rel="noopener">Read Substack</a>
-          <a class="btn" href="https://www.saatchiart.com/robbiegallows" target="_blank" rel="noopener">Saatchi Fine Art Store</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="gallery" class="section">
+<div class="container">
+<div class="head">
+<span class="tag">The Litany of Lost Hours — Graveyard Edition</span>
+<h2 class="stitle">Works Unearthed from the Cemetery</h2>
+</div>
+<div class="gallery">
+<div class="card">
+<div class="thumb" onclick="openLB('public/hero-orange-girl.jpg','Ticking Towards Yesterday','Lead DARKLY 065','Gothic Expressionism • DARKLY 065')">
+<img src="public/hero-orange-girl.jpg" loading="lazy">
+<div class="overlay"><span class="btn btn-crimson">View in Graveyard</span></div>
+</div>
+<div class="info"><div><h3>Ticking Towards Yesterday</h3><p>Lead DARKLY image — strongest image, now presented as if unearthed from Victorian grave.</p></div><div class="meta"><span class="badge b-crimson">Blood Red</span><span class="badge b-purple">DARKLY 065</span><span class="badge b-charcoal">Black Foundation</span></div></div>
+</div>
+<div class="card">
+<div class="thumb" onclick="openLB('public/winged-reaper.jpg','Winged Reaper — DARKLY 070 — Graveyard Guardian','Moonlit mountains, winged reaper over overgrown grave, crows','Midnight Blue • Graveyard')">
+<img src="public/winged-reaper.jpg" loading="lazy">
+<div class="overlay"><span class="btn btn-crimson">Enter Graveyard</span></div>
+</div>
+<div class="info"><div><h3>Winged Reaper — DARKLY 070 • Graveyard Guardian</h3><p>Moonlit mountains — winged figure over overgrown grave, crows circling — core graveyard image.</p></div><div class="meta"><span class="badge b-midnight">Midnight Blue</span><span class="badge b-charcoal">Charcoal Tombstone</span><span class="badge b-purple">DARKLY</span></div></div>
+</div>
+<div class="card">
+<div class="thumb" onclick="openLB('public/skull-crawler.jpg','Skull Crawler — DARKLY 069 — Unearthed','Skull-faced crawler emerging from ash field under burning sky','Blood Red • Unearthed')">
+<img src="public/skull-crawler.jpg" loading="lazy">
+<div class="overlay"><span class="btn btn-crimson">Unearthed</span></div>
+</div>
+<div class="info"><div><h3>Skull Crawler — DARKLY 069 • Unearthed</h3><p>Skull creature crawling through ash under crimson burning sky — emerging from grave.</p></div><div class="meta"><span class="badge b-crimson">Blood Red</span><span class="badge b-charcoal">Graveyard Soil</span></div></div>
+</div>
+<div class="card">
+<div class="thumb" onclick="openLB('public/mouth-of-the-abyss.jpg','The Mouth of the Abyss — The Open Grave','Dual serpentine guardians over cloaked mourners, cosmic vortex as open grave','Gothic Surrealism')">
+<img src="public/mouth-of-the-abyss.jpg" loading="lazy">
+<div class="overlay"><span class="btn btn-crimson">View</span></div>
+</div>
+<div class="info"><div><h3>The Mouth of the Abyss — The Open Grave</h3><p>Dual serpents spew spectral energy above mourners as vortex opens like fresh grave into void.</p></div><div class="meta"><span class="badge b-purple">Deep Purple • Royal Tomb</span><span class="badge b-crimson">Available</span></div></div>
+</div>
+<div class="card">
+<div class="thumb" onclick="openLB('public/pillar-of-lost-souls.jpg','The Pillar of Lost Souls — Mausoleum','Chained to luminous fractured monolith — like chained spirits in mausoleum','Dark Surrealist')">
+<img src="public/pillar-of-lost-souls.jpg" loading="lazy">
+<div class="overlay"><span class="btn btn-crimson">Enter Mausoleum</span></div>
+</div>
+<div class="info"><div><h3>The Pillar of Lost Souls — Mausoleum</h3><p>Chained spectral figures anchored to fractured monolith — ritualistic entrapment in crypt.</p></div><div class="meta"><span class="badge b-midnight">Midnight Blue • Crypt</span><span class="badge b-emerald">Emerald Moss</span></div></div>
+</div>
+<div class="card">
+<div class="thumb" onclick="openLB('public/cathedral-of-ashes.jpg','Cathedral of Ashes — Ruined Chapel','Juxtapoz — architectural decay of chapel in graveyard','Victorian Graveyard')">
+<img src="public/cathedral-of-ashes.jpg" loading="lazy">
+<div class="overlay"><span class="btn btn-crimson">Enter Chapel</span></div>
+</div>
+<div class="info"><div><h3>Cathedral of Ashes — Ruined Chapel</h3><p>Central Juxtapoz piece — architectural decay of cemetery chapel.</p></div><div class="meta"><span class="badge b-emerald">Dark Emerald • Overgrown</span><span class="badge b-charcoal">Charcoal Ruin</span></div></div>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Featured Series</span>
-        <h2 class="section-title">The Litany of Lost Hours: Contemporary Mixed-Media Paintings</h2>
-      </div>
+<section id="instudio" class="section">
+<div class="container">
+<div class="head"><span class="tag">Process — Amongst the Graves</span><h2 class="stitle">In Studio — Tactile & Hybrid Unearthed</h2></div>
+<div class="studio" style="margin-bottom:64px">
+<div class="frame emerald"><img src="public/in-studio-1.jpg" alt="In Studio - Graveyard Edition"></div>
+<div>
+<span class="badge b-emerald" style="margin-bottom:14px;display:inline-block">Dark Emerald / Forest Green — Moss Reclaiming Tombstones</span>
+<h3 style="font-size:1.6rem;margin-bottom:14px">Where Physical Meets Digital — In the Graveyard Studio</h3>
+<p style="font-family:'Cormorant Garamond',serif;font-size:1.22rem;color:#e8e4dc;margin-bottom:14px">“Every canvas starts with a digital foundation, printed onto canvas before being heavily worked over with physical oil paints and Mod Podge to construct tactile, dimensional textures — like moss building on old stones.”</p>
+</div>
+</div>
+<div class="studio">
+<div style="text-align:right">
+<span class="badge b-midnight" style="margin-bottom:14px;display:inline-block">Midnight Blue — Ominous Night Sky Over Cemetery</span>
+<h3 style="font-size:1.6rem;margin-bottom:14px">Scale and Presence — Tombstone Scale</h3>
+<p style="font-family:'Cormorant Garamond',serif;font-size:1.22rem;color:#e8e4dc;margin-bottom:14px">“Working at scale allows physical textures to engage directly with viewer space, mirroring conceptual weight of mortality and architectural decay of graves.”</p>
+</div>
+<div class="frame midnight"><img src="public/in-studio-2.jpg" alt="Holding painting in graveyard studio"></div>
+</div>
+</div>
+</section>
 
-      <div class="gallery-grid">
+<section id="film" class="section" style="background:linear-gradient(180deg, rgba(10,25,49,0.12) 0%, rgba(4,4,6,0.0) 100%)">
+<div class="container">
+<div class="head">
+<span class="tag">BFA Film • Cinematic Lighting • Filmmaker</span>
+<h2 class="stitle">Filmmaker — Motion & Dark Narrative</h2>
+<p style="color:var(--muted);max-width:740px;margin:14px auto 0;font-family:'Cormorant Garamond',serif;font-size:1.12rem">My practice is rooted in film — chiaroscuro lighting, temporal decay, and physical weight of time come directly from cinematic language. Each painting is a still from a larger narrative. Cinematic explorations across YouTube and Vimeo.</p>
+</div>
 
-        <!-- The Mouth of the Abyss -->
-        <div class="art-card">
-          <div class="art-thumb-wrapper" onclick="openLightbox('public/The_Mouth_of_the_Abyss.jpg', '', 'The Mouth of the Abyss', 'A visceral gothic narrative depicting towering, dual serpentine guardians exuding spectral light above a procession of cloaked figures. A vortex of stellar cosmic energy opens into an absolute void, exploring mythology, cosmic dread, and existential transition.', 'Gothic Surrealism & Impasto')">
-            <img src="public/The_Mouth_of_the_Abyss.jpg" alt="The Mouth of the Abyss by Gothic Expressionist Artist Robbie Gallows. Dark gothic expressionist painting featuring dual monstrous serpents, a cosmic vortex void, and cloaked figures." loading="lazy">
-            <div class="art-overlay">
-              <span class="btn">View Artwork</span>
-            </div>
-          </div>
-          <div class="art-info">
-            <div>
-              <h3>The Mouth of the Abyss</h3>
-              <p>Dual serpentine beasts spew spectral energy above a procession of cloaked wanderers as a swirling cosmic vortex opens into the void, meditating on mythology and cosmic dread.</p>
-            </div>
-            <div class="art-meta">
-              <span class="badge">Gothic Surrealism & Impasto</span>
-              <span class="badge" style="border-color: var(--gold-dim);">Available Original</span>
-            </div>
-          </div>
-        </div>
+<div class="video-wrap" style="max-width:1080px;margin:0 auto 48px;border:1px solid #12243f;box-shadow:0 0 0 1px #0a1931 inset,0 28px 70px rgba(0,0,0,0.96);background:#000;position:relative">
+<div style="position:absolute;top:-10px;left:24px;background:var(--crimson);color:#fff;font-size:0.62rem;letter-spacing:2.5px;padding:4px 12px;font-family:'Cinzel',serif">FEATURED • YOUTUBE</div>
+<div class="vbox"><iframe src="https://www.youtube.com/embed/eeK4zygWBBI" title="Robbie Gallows YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div style="padding:18px 22px;background:#1a1a1e;border-top:1px solid #2a2a32;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+<div>
+<h3 style="font-size:1rem;margin-bottom:2px">Cinematic Exploration — The Litany of Lost Hours</h3>
+<p style="color:var(--muted);font-size:0.85rem;font-family:'Cormorant Garamond',serif;font-style:italic">Digital painting + motion animation + soundscape — gothic expressionist narrative</p>
+</div>
+<a href="https://www.youtube.com/@robbiegallows" target="_blank" class="btn btn-outline" style="padding:8px 16px;font-size:0.62rem">YouTube Channel</a>
+</div>
+</div>
 
-        <!-- The Pillar of Lost Souls -->
-        <div class="art-card">
-          <div class="art-thumb-wrapper" onclick="openLightbox('public/The-Pillar-of-Lost-Souls.jpeg', '', 'The Pillar of Lost Souls', 'An evocative study in spectral entrapment and dark ritualism from The Litany of Lost Hours series. Figures chained to a luminous fractured monolith emerge from deep cyan-submerged shadows, examining the intersection between spiritual constraint and temporal energy.', 'Dark Surrealist Impasto')">
-            <img src="public/The-Pillar-of-Lost-Souls.jpeg" alt="The Pillar of Lost Souls by Gothic Expressionist Artist Robbie Gallows. Dark surrealist painting depicting chained ghostly figures surrounding a fractured electric blue monolith." loading="lazy">
-            <div class="art-overlay">
-              <span class="btn">View Artwork</span>
-            </div>
-          </div>
-          <div class="art-info">
-            <div>
-              <h3>The Pillar of Lost Souls</h3>
-              <p>Chained spectral figures anchored to a fractured, energy-pulsing monolith, exploring ritualistic entrapment and temporal power through atmospheric dark cyan textures.</p>
-            </div>
-            <div class="art-meta">
-              <span class="badge">Dark Surrealist Impasto</span>
-              <span class="badge" style="border-color: var(--gold-dim);">Available Original</span>
-            </div>
-          </div>
-        </div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:1080px;margin:0 auto">
+<div style="background:#1a1a1e;border:1px solid #2a2a32;box-shadow:0 18px 44px rgba(0,0,0,0.88)">
+<div style="position:relative;padding-bottom:56.25%;height:0;background:#000">
+<iframe src="https://player.vimeo.com/video/76979871?title=0&byline=0&portrait=0" style="position:absolute;inset:0;width:100%;height:100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Vimeo Film"></iframe>
+</div>
+<div style="padding:18px 20px">
+<span class="badge b-midnight" style="display:inline-block;margin-bottom:8px">VIMEO • Filmmaker Cut • Replace ID with your Vimeo ID</span>
+<h3 style="font-size:1.05rem;margin-bottom:6px">Vimeo — Director's Process & Short Film</h3>
+<p style="color:var(--muted);font-size:0.88rem;font-family:'Cormorant Garamond',serif">Replace 76979871 with your Vimeo ID. Vimeo preserves heavy oil textures better — use for texture close-ups and short gothic narrative. High-bitrate Pro.</p>
+</div>
+</div>
+<div style="background:#1a1a1e;border:1px solid #2a2a32;box-shadow:0 18px 44px rgba(0,0,0,0.88)">
+<div style="position:relative;padding-bottom:56.25%;height:0;background:#000">
+<iframe src="https://www.youtube.com/embed/eeK4zygWBBI" style="position:absolute;inset:0;width:100%;height:100%" title="YouTube Additional" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div style="padding:18px 20px">
+<span class="badge b-crimson" style="display:inline-block;margin-bottom:8px">YOUTUBE • Studio Process • 4K</span>
+<h3 style="font-size:1.05rem;margin-bottom:6px">YouTube — Studio & Impasto Texture</h3>
+<p style="color:var(--muted);font-size:0.88rem;font-family:'Cormorant Garamond',serif">Close-up heavy oil + Mod Podge build-up, tactile dimensional surfaces, chiaroscuro lighting from BFA Film background.</p>
+</div>
+</div>
+</div>
 
-        <!-- Card 1 -->
-        <div class="art-card">
-          <div class="art-thumb-wrapper" onclick="openLightbox('public/The-Last-Confession.jpeg', '', 'The Last Confession', 'An examination of spectral presence and existential memory within the series. Utilizing Renaissance-inspired chiaroscuro lighting and layered impasto depth, this piece explores the boundary between mortal physical space and forgotten temporal realms.', 'Digital Gothic Realism')">
-            <img src="public/The-Last-Confession.jpeg" alt="The Last Confession by Gothic Expressionist Artist Robbie Gallows. A contemporary mixed-media painting featuring impasto textures and dark spectral architecture." loading="lazy">
-            <div class="art-overlay">
-              <span class="btn">View Artwork</span>
-            </div>
-          </div>
-          <div class="art-info">
-            <div>
-              <h3>The Last Confession</h3>
-              <p>Digital gothic realism featuring chiaroscuro contrast and heavy oil impasto textures, exploring spectral presence, memory, and the boundary of mortal time.</p>
-            </div>
-            <div class="art-meta">
-              <span class="badge">Digital Gothic Realism</span>
-              <span class="badge" style="border-color: var(--line); color: var(--muted);">Archive</span>
-            </div>
-          </div>
-        </div>
+<div style="max-width:1080px;margin:40px auto 0;padding:22px;background:rgba(26,26,30,0.6);border:1px dashed #2a2a32;text-align:center">
+<p style="color:var(--muted);font-size:0.9rem;font-family:'Cormorant Garamond',serif;font-style:italic">To add your Vimeo: replace 76979871 with your actual Vimeo ID (numbers in your Vimeo URL). YouTube for reach, Vimeo for texture preservation. BFA Film + gothic painting = filmmaker advantage.</p>
+</div>
+</div>
+</section>
 
-        <!-- Card 2 -->
-        <div class="art-card">
-          <div class="art-thumb-wrapper" onclick="openLightbox('public/The-Orb.jpg', '', 'The Orb', 'Part of The Litany of Lost Hours series, The Orb investigates gothic iconography, spiritual transition, and architectural decay. Layered with tactile impasto oil aesthetics and dark surrealism to embody the physical weight of lost hours.', 'Hybrid Impasto Work')">
-            <img src="public/The-Orb.jpg" alt="The Orb by Gothic Expressionist Artist Robbie Gallows. A contemporary mixed-media painting featuring impasto textures and dark spectral architecture." loading="lazy">
-            <div class="art-overlay">
-              <span class="btn">View Artwork</span>
-            </div>
-          </div>
-          <div class="art-info">
-            <div>
-              <h3>The Orb</h3>
-              <p>Investigating dark surrealism and gothic iconography through tactile impasto depth, capturing the physical weight of time and spiritual transition.</p>
-            </div>
-            <div class="art-meta">
-              <span class="badge">Hybrid Impasto Work</span>
-              <span class="badge" style="border-color: var(--line); color: var(--muted);">Archive</span>
-            </div>
-          </div>
-        </div>
+<section id="prints" class="section">
+<div class="container">
+<div class="banner">
+<span class="tag">Archival Reproductions — Sold via Saatchi Art — Exhumed for Collectors</span>
+<h2>Fine Art Prints & Canvas Editions — From the Graveyard</h2>
+<p style="max-width:700px;margin:12px auto 28px;color:var(--muted)">Museum-quality archival prints, stretched gallery canvas wraps, custom-framed reproductions — Saatchi Art fulfillment, worldwide shipping.</p>
+<a class="btn btn-crimson" href="https://www.saatchiart.com/robbiegallows" target="_blank">Shop Saatchi Collection — Graveyard Edition</a>
+</div>
+</div>
+</section>
 
-        <!-- Card 3 -->
-        <div class="art-card">
-          <div class="art-thumb-wrapper" onclick="openLightbox('public/ticking-towards-yesterday.jpeg', '', 'Ticking Towards Yesterday', 'An exploration of temporal decay, consciousness, and physical erosion within The Litany of Lost Hours series. Heavy cracked textures and bleeding clockwork motifs meditate on the passage of time.', 'Gothic Expressionism')">
-            <img src="public/ticking-towards-yesterday.jpeg" alt="Ticking Towards Yesterday by Gothic Expressionist Artist Robbie Gallows. A contemporary mixed-media painting featuring impasto textures and dark spectral architecture." loading="lazy">
-            <div class="art-overlay">
-              <span class="btn">View Artwork</span>
-            </div>
-          </div>
-          <div class="art-info">
-            <div>
-              <h3>Ticking Towards Yesterday</h3>
-              <p>Meditating on the erosion of memory, temporal decay, and mortality through visceral cracked textures and symbolic clockwork motifs.</p>
-            </div>
-            <div class="art-meta">
-              <span class="badge">Gothic Expressionism</span>
-              <span class="badge" style="border-color: var(--gold-dim);">Available Original</span>
-            </div>
-          </div>
-        </div>
+<section id="press" class="section">
+<div class="container">
+<div class="head"><span class="tag">Press & Recognition — Unearthed from DARKLY Crypt</span><h2 class="stitle">Editorial — From the Grave</h2></div>
+<div class="press">
+<div class="press-card crimson">
+<span class="badge b-crimson">DARKLY 065-070 • Graveyard Feature</span>
+<h3 style="margin-top:12px">TICKING TOWARDS YESTERDAY • Amongst the Graves</h3>
+<p style="color:var(--muted);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;margin:14px 0 20px">“Offers profound exploration of existence, weaving life and time... powerful reminder of ephemeral nature of experiences and the world that shapes them — like epitaph on weathered stone.”</p>
+<a class="btn btn-outline" href="public/darkly-press-sheet.jpg" target="_blank">View Press Sheet — Graveyard Fixed</a>
+</div>
+<div class="press-card purple">
+<span class="badge b-purple">Deep Purple / Amethyst • Royalty Buried</span>
+<h3 style="margin-top:12px">SHADOWS OF THE PAST • Tombstone Edition</h3>
+<p style="color:var(--muted);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;margin:14px 0 20px">“In-depth editorial spotlight exploring contemporary expressionism, mortality, atmospheric depth, and emotional resonance of darkness within modern visual art.”</p>
+<a class="btn btn-outline" href="https://share.google/zPPxQbSMCHw86DMrc" target="_blank">Read Art Market Feature</a>
+</div>
+</div>
+</div>
+</section>
 
-        <!-- Card 4 -->
-        <div class="art-card">
-          <div class="art-thumb-wrapper" onclick="openLightbox('public/Cathedral of Ashes painting.jpg', '', 'Cathedral of Ashes', 'Featured in the Juxtapoz editorial portfolio submission, Cathedral of Ashes anchors The Litany of Lost Hours series. It explores architectural decay, dark surrealism, and human mortality through dramatically layered digital painting and heavy impasto textures.', 'Available Original Edition')">
-            <img src="public/Cathedral of Ashes painting.jpg" alt="Cathedral of Ashes by Gothic Expressionist Artist Robbie Gallows. A contemporary mixed-media painting featuring impasto textures and dark spectral architecture." loading="lazy">
-            <div class="art-overlay">
-              <span class="btn">View Artwork</span>
-            </div>
-          </div>
-          <div class="art-info">
-            <div>
-              <h3>Cathedral of Ashes</h3>
-              <p>A central piece from the Juxtapoz submission exploring architectural decay and mortality through dramatic chiaroscuro lighting and impasto textures.</p>
-            </div>
-            <div class="art-meta">
-              <span class="badge">Available Original</span>
-              <span class="badge" style="border-color: var(--gold-dim);">Collector Inquiry</span>
-            </div>
-          </div>
-        </div>
+<section id="about" class="section">
+<div class="container">
+<div class="head"><span class="tag">Artist Statement — Graveyard Palette</span><h2 class="stitle">The Litany of Lost Hours — Victorian Graveyard</h2></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:54px" class="studio">
+<div style="background:#1a1a1e;padding:42px;border:1px solid #2a2a32">
+<p style="font-family:'Cormorant Garamond',serif;font-size:1.24rem;color:#e8e4dc;margin-bottom:18px">“My work operates in space between traditional fine art concepts and contemporary digital practice, bridging classical chiaroscuro lighting with dark, heavy impasto textures — like moonlight on old tombstones.”</p>
+<p style="color:var(--muted);font-size:0.98rem">
+<span style="color:#fff">Black:</span> night over cemetery, mystery, timeless elegance.<br>
+<span style="color:var(--crimson)">Blood Red / Burgundy / Crimson:</span> fresh grave flowers, tragic love buried.<br>
+<span style="color:#9d82d6">Deep Purple / Amethyst:</span> royalty buried, dark aristocrats in mausoleums.<br>
+<span style="color:#7ea0d6">Midnight Blue:</span> ominous night sky over graveyard.<br>
+<span style="color:#6ab085">Dark Emerald:</span> moss reclaiming stones, Victorian greenhouse gone wild.<br>
+<span style="color:var(--muted)">Charcoal:</span> tombstone shadow, iron fence dimension.</p>
+</div>
+<div style="border-left:2px solid var(--crimson);padding-left:30px;display:flex;flex-direction:column;gap:30px">
+<div><h3 style="color:var(--crimson);font-size:1.05rem;margin-bottom:6px">Graveyard Guardian — Winged Reaper</h3><p style="color:var(--muted);font-size:0.92rem">DARKLY 070 — ultimate graveyard image, midnight blue mountains, winged figure over overgrown grave, crows.</p></div>
+<div><h3 style="color:#9d82d6;font-size:1.05rem;margin-bottom:6px">Unearthed — Skull Crawler</h3><p style="color:var(--muted);font-size:0.92rem">DARKLY 069 — skull-faced crawler clawing from ash field, blood red sky — as if emerging from grave.</p></div>
+<div><h3 style="color:#6ab085;font-size:1.05rem;margin-bottom:6px">Victorian Graveyard Texture</h3><p style="color:var(--muted);font-size:0.92rem">Misty cemetery, wrought iron, mossy tombstones at 5% opacity behind gallery.</p></div>
+</div>
+</div>
+</div>
+</section>
 
-      </div>
-    </div>
-  </section>
+<section id="contact" class="section">
+<div class="container">
+<div class="contact">
+<span class="tag">Studio Acquisitions — Saatchi Art Fulfillment • Toronto • From the Grave</span>
+<h2 style="font-size:2.2rem;margin-bottom:10px">Collector Contact — Unearth a Work</h2>
+<p style="color:var(--muted)">Originals, gallery exhibitions, editorial, commissions — unearthed from Victorian graveyard studio:</p>
+<a class="email" href="mailto:robbiegallows@gmail.com">robbiegallows@gmail.com</a>
+<div style="margin-top:22px"><a class="btn btn-crimson" href="mailto:robbiegallows@gmail.com">Send Inquiry From Graveyard</a> <a class="btn btn-outline" href="https://www.saatchiart.com/robbiegallows" target="_blank" style="margin-left:10px">Saatchi Store</a></div>
+</div>
+</div>
+</section>
 
-  <!-- In Studio Section -->
-  <section id="instudio" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Process & Environment</span>
-        <h2 class="section-title">In Studio</h2>
-      </div>
+<footer>
+<div class="container">
+<p>© 2026 Robbie Gallows. All Rights Reserved. Gothic Expressionism — Victorian Graveyard Edition — Toronto</p>
+<p style="font-size:0.82rem;color:#555;margin-top:8px">Graveyard Edition Palette: Black night over cemetery • Blood Red fresh grave flowers • Deep Purple royal tombs • Midnight Blue night sky over graves • Dark Emerald moss reclaiming stones • Charcoal tombstone shadow.</p>
+<div class="flinks">
+<a href="https://instagram.com/robbiegallows" target="_blank">Instagram</a>
+<a href="https://www.saatchiart.com/robbiegallows" target="_blank">Saatchi Art — Prints & Originals</a>
+<a href="https://robbiegallowsstudio.substack.com" target="_blank">Substack</a>
+<a href="https://share.google/zPPxQbSMCHw86DMrc" target="_blank">Art Market Feature</a>
+<a href="#gallery">Graveyard Gallery</a>
+</div>
+</div>
+</footer>
 
-      <div class="studio-grid" style="margin-bottom: 60px;">
-        <div class="studio-frame">
-          <img src="public/RobbieGallows_InStudio_TheLitanyOfLostHours.jpg" alt="Robbie Gallows working in studio on The Litany of Lost Hours" loading="lazy">
-        </div>
-        <div class="studio-text">
-          <span class="badge" style="margin-bottom: 15px;">Tactile & Hybrid Workflow</span>
-          <h3>Where Physical Meets Digital</h3>
-          <p>"Every canvas starts with a digital foundation, printed onto canvas before being heavily worked over with physical oil paints and Mod Podge to construct tactile, dimensional textures."</p>
-          <p>This hands-on impasto technique creates a tangible surface depth that grounds the atmospheric and dark, chiaroscuro themes of each piece in the physical realm.</p>
-          <a class="btn" href="https://robbiegallowsstudio.substack.com" target="_blank" rel="noopener">Read Studio Updates on Substack</a>
-        </div>
-      </div>
+<div class="lightbox" id="lb">
+<div style="position:relative;width:100%;max-width:1080px">
+<button class="close" onclick="closeLB()">×</button>
+<div class="lb-content">
+<div class="lb-img"><img id="lb-img" src="" alt=""></div>
+<div>
+<span class="badge b-crimson" id="lb-badge">Work</span>
+<h3 id="lb-title" style="margin-top:14px">Title</h3>
+<p id="lb-desc" style="color:var(--muted);margin:16px 0 22px;font-family:'Cormorant Garamond',serif;font-size:1.12rem;line-height:1.7"></p>
+<a class="btn btn-crimson" id="lb-mail" href="mailto:robbiegallows@gmail.com">Inquire — Unearth This Work</a>
+<a class="btn btn-outline" href="https://www.saatchiart.com/robbiegallows" target="_blank" style="margin-left:10px">Saatchi</a>
+</div>
+</div>
+</div>
+</div>
 
-      <div class="studio-grid" style="grid-template-columns: 1fr 1.1fr;">
-        <div class="studio-text" style="text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
-            <span class="badge" style="margin-bottom: 15px;">Material Depth</span>
-            <h3>Scale and Presence</h3>
-            <p>"Working at scale allows the physical textures of the medium to engage directly with the viewer's physical space, mirroring the conceptual weight of mortality and architectural decay explored in the work."</p>
-            <p>The interplay of heavy impasto and cinematic lighting requires a large format to maximize the 'weight' and presence of each piece.</p>
-        </div>
-        <div class="studio-frame">
-            <img src="public/Robbie_holding_painting.jpeg" alt="Robbie Gallows holding a large finished painting" loading="lazy">
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Fine Art Prints Section -->
-  <section id="prints" class="section">
-    <div class="container">
-      <div class="banner-box">
-        <span class="section-tag">Archival Reproductions</span>
-        <h2>Fine Art Prints & Canvas Editions</h2>
-        <p>Acquire museum-quality archival prints, stretched gallery canvas wraps, and custom-framed reproductions directly through my Saatchi Art studio storefront.</p>
-        <a class="btn btn-solid" href="https://www.saatchiart.com/robbiegallows" target="_blank" rel="noopener">Shop Saatchi Collection</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Multimedia Video Section -->
-  <section id="multimedia" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Cinematic Visuals</span>
-        <h2 class="section-title">Multimedia Explorations</h2>
-      </div>
-
-      <div class="video-wrapper">
-        <div class="video-box">
-          <iframe src="https://www.youtube.com/embed/eeK4zygWBBI" title="Robbie Gallows Multimedia Artwork" allowfullscreen></iframe>
-        </div>
-      </div>
-      <p style="text-align: center; margin-top: 30px; font-style: italic;">Cinematic explorations fusing digital painting, motion animation, soundscapes, and dark narrative storytelling.</p>
-    </div>
-  </section>
-
-  <!-- Press & Publication Spotlight -->
-  <section id="press" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Press & Recognition</span>
-        <h2 class="section-title">Editorial Spotlight</h2>
-      </div>
-
-      <div class="banner-box" style="border-color: var(--gold-dim); background: linear-gradient(135deg, rgba(10,10,14,0.95) 0%, rgba(18,12,20,0.95) 100%);">
-        <span class="badge" style="margin-bottom: 20px; font-weight: 600;">Art Market Magazine Feature</span>
-        <h3 style="font-size: 2.2rem; color: var(--white); margin-bottom: 15px; font-family: var(--font-heading);">ROBBIE GALLOWS | SHADOWS OF THE PAST</h3>
-        <p style="max-width: 760px; margin: 0 auto 30px; font-family: var(--font-serif); font-style: italic; font-size: 1.25rem; color: var(--white); line-height: 1.8;">
-          "An in-depth editorial spotlight exploring contemporary expressionism, mortality, atmospheric depth, and the emotional resonance of darkness within modern visual art."
-        </p>
-        <a class="btn btn-solid" href="https://share.google/zPPxQbSMCHw86DMrc" target="_blank" rel="noopener">Read Feature Article</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Artist Statement -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Editorial Artist Statement</span>
-        <h2 class="section-title">The Litany of Lost Hours</h2>
-      </div>
-
-      <div class="statement-grid">
-        <div class="statement-card">
-          <p>"My work operates in the space between traditional fine art concepts and contemporary digital practice, bridging classical chiaroscuro lighting with dark, heavy impasto textures."</p>
-          <p>Based in Toronto with a background in film, my practice investigates architectural decay, gothic iconography, and the physical weight of time—creating immersive visual narratives that explore existential transition and mortality.</p>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Juxtapoz Editorial Submission</h3>
-            <p>Curated presentation of 'THE LITANY OF LOST HOURS' highlighting dark surrealism, architectural decay, and hybrid digital-impasto workflows.</p>
-          </div>
-          <div class="timeline-item">
-            <h3>Art Market Magazine Spotlight</h3>
-            <p>Featured publication spotlight on 'Shadows of the Past,' recognizing foundational work in contemporary dark expressionism.</p>
-          </div>
-          <div class="timeline-item">
-            <h3>Film & Cross-Disciplinary Practice</h3>
-            <p>Utilizing a BFA background in film to infuse classical painting with cinematic lighting, depth, and audio-visual storytelling.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="contact-card">
-        <span class="section-tag">Studio Acquisitions</span>
-        <h2>Collector Contact</h2>
-        <p>For original painting inquiries, gallery exhibitions, editorial requests, or private commissions:</p>
-        <a class="email-link" href="mailto:robbiegallows@gmail.com">robbiegallows@gmail.com</a>
-        <div>
-          <a class="btn btn-solid" href="mailto:robbiegallows@gmail.com">Send Inquiry</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2026 Robbie Gallows. All Rights Reserved.</p>
-      <p style="font-size: 0.85rem; color: var(--gold-dim); margin-top: 5px;">Gothic Expressionism & Fine Art Studio — Toronto</p>
-      <div class="footer-links">
-        <a href="https://instagram.com/robbiegallows" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://robbiegallowsstudio.substack.com" target="_blank" rel="noopener">Substack</a>
-        <a href="https://www.saatchiart.com/robbiegallows" target="_blank" rel="noopener">Saatchi Art</a>
-        <a href="https://share.google/zPPxQbSMCHw86DMrc" target="_blank" rel="noopener">Art Market Feature</a>
-        <a href="https://robbiegallows.vercel.app/">Official Portfolio</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Lightbox Modal -->
-  <div class="lightbox" id="lightbox">
-    <div class="lightbox-content">
-      <button class="lightbox-close" onclick="closeLightbox()">×</button>
-      <div class="lightbox-img-wrapper">
-        <div class="lightbox-img-container">
-          <img id="lightbox-img" src="" alt="Artwork Preview">
-        </div>
-        <!-- Texture / Detail View Switcher -->
-        <div class="lightbox-view-toggle">
-          <button id="toggle-full-btn" class="btn btn-solid" style="padding: 8px 16px; font-size: 0.65rem;" onclick="showFullView()">Full View</button>
-          <button id="toggle-detail-btn" class="btn" style="padding: 8px 16px; font-size: 0.65rem;" onclick="showDetailView()">Detail / Impasto Texture</button>
-        </div>
-      </div>
-      <div class="lightbox-details">
-        <span class="badge" id="lightbox-tag">Digital Gothic Realism</span>
-        <h3 id="lightbox-title" style="margin-top: 15px;">Artwork Title</h3>
-        <p id="lightbox-desc">Artwork description...</p>
-        <div>
-          <a class="btn btn-solid" id="lightbox-inquire" href="mailto:robbiegallows@gmail.com">Inquire About Work</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Ambient Cursor Movement
-    const cursor = document.getElementById('cursor-glow');
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-
-    // Lightbox & Texture Toggle Logic
-    let currentFullImg = "";
-    let currentDetailImg = "";
-
-    function openLightbox(imgSrc, detailSrc, title, desc, tag) {
-      const lightbox = document.getElementById('lightbox');
-      
-      currentFullImg = imgSrc;
-      currentDetailImg = (detailSrc && detailSrc.trim() !== '') ? detailSrc : imgSrc;
-
-      document.getElementById('lightbox-img').src = currentFullImg;
-      document.getElementById('lightbox-title').innerText = title;
-      document.getElementById('lightbox-desc').innerText = desc;
-      document.getElementById('lightbox-tag').innerText = tag;
-      
-      document.getElementById('toggle-full-btn').className = "btn btn-solid";
-      document.getElementById('toggle-detail-btn').className = "btn";
-
-      const emailSubject = encodeURIComponent(`Inquiry regarding artwork: ${title}`);
-      document.getElementById('lightbox-inquire').href = `mailto:robbiegallows@gmail.com?subject=${emailSubject}`;
-
-      lightbox.classList.add('active');
-    }
-
-    function showFullView() {
-      document.getElementById('lightbox-img').src = currentFullImg;
-      document.getElementById('toggle-full-btn').className = "btn btn-solid";
-      document.getElementById('toggle-detail-btn').className = "btn";
-    }
-
-    function showDetailView() {
-      document.getElementById('lightbox-img').src = currentDetailImg;
-      document.getElementById('toggle-detail-btn').className = "btn btn-solid";
-      document.getElementById('toggle-full-btn').className = "btn";
-    }
-
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
-    });
-
-    document.getElementById('lightbox').addEventListener('click', (e) => {
-      if (e.target === document.getElementById('lightbox')) closeLightbox();
-    });
-  </script>
-
+<script>
+function openLB(src,title,desc,tag){
+ document.getElementById('lb-img').src=src;
+ document.getElementById('lb-title').innerText=title;
+ document.getElementById('lb-desc').innerText=desc;
+ document.getElementById('lb-badge').innerText=tag;
+ document.getElementById('lb-mail').href='mailto:robbiegallows@gmail.com?subject='+encodeURIComponent('Inquiry: '+title+' — Graveyard Edition');
+ document.getElementById('lb').classList.add('active');
+}
+function closeLB(){document.getElementById('lb').classList.remove('active')}
+document.getElementById('lb').addEventListener('click',e=>{if(e.target.id==='lb') closeLB()})
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeLB()})
+</script>
 </body>
-
 </html>
